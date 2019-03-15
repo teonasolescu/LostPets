@@ -1,0 +1,117 @@
+body{
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card{
+    width: 398px;
+    height: 397px;
+    box-shadow: 0 0 5px 2px #bcc2c6;
+    display: inline-block;
+    position: relative;
+    border-radius: 15px;
+}
+.card .header{
+    position: absolute;
+    width: 398px;
+    height: 397px;
+}
+.card .header .petImg{
+    width: 398px;
+    height: 241px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.card .header .profile {
+    position: absolute;
+    top: 1em;
+    left: 0.5em;
+}
+.card .header .avatar{
+    vertical-align: middle;
+    height: 38px;
+    width: 38px;
+    border-radius: 100%;
+}
+.card .header p{
+    display: inline-block;
+    margin: 0 0.5em;
+    vertical-align: middle;
+    color: white;
+    font-weight: bold;
+}
+.card .header .btn{
+    position: absolute;
+    top: 1em;
+    right: 0.5em;
+    display: none;
+}
+.card .header:hover .btn{
+    display: block;
+}
+.card .header .btn button:nth-of-type(1){
+    border: none;
+    background: none;
+    position: relative;
+    margin: 0 0.5em;
+}
+.card .header .btn span{
+    color: #FF8463;
+    font-size: 12px;
+    font-weight: bold;
+    position: absolute;
+    top: 43%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.card .header .btn button:nth-of-type(2){
+    background-color: white;
+    border-radius: 100%;
+    border: none;
+    width: 30px;
+    height: 30px;
+    float: right;
+}
+.card .footer{
+    position: absolute;
+    bottom: 0;
+    width: 398px; 
+    height: 156px;
+    color: #696969;
+}
+.card .footer button{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #FFAD00;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    width: 118px;
+    height: 69px;
+    border: none;
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+.card .footer .info{
+    position: absolute;
+    top: 0;
+    left: 1em;
+}
+.card .footer .info div p{
+    margin-left: 1em;
+    display: inline-block;
+    padding: 5px;
+    margin: 5px;
+}
+.card .footer .info div .name{
+    display: inline-block;
+}
+.card .footer .info div .name h2{
+    font-size: 30px;
+    padding: 0px;
+    margin: 0px;
+}
