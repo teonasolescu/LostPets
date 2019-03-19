@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Drop button</title>
+</head>
+<body>
+        <style>
+
+                div.container {
+                    width: 100%;
+                    border-radius: 25px;
+                }
+                
+                @-webkit-keyframes fadeEffect {
+                    from {opacity: 0;}
+                    to {opacity: 1;}
+                }
+                
+                @keyframes fadeEffect {
+                    from {opacity: 0;}
+                    to {opacity: 1;}
+                }
+
+                .topright {
+                    position: absolute;
+                    top: 8px;
+                    right: 16px;
+                    font-size: 18px;
+                }
+
+                header{
+                    padding: 1em;
+                    color: white;
+                    background-color: transparent;
+                    clear: left;
+                }
+
+                .container {
+                    overflow: hidden;
+                    background-color: transparent;
+                }
+                
+                .container a {
+                    float: right;
+                    font-size: 1.17em;
+                    color: black;
+                    text-align: center;
+                    padding: 14px 16px;
+                    text-decoration: none;
+                }
+                
+                .dropdown {
+                    float: right;
+                    overflow: hidden;
+                }
+                
+                .dropdown .dropbtn {
+                    font-size: 1.17em;    
+                    border: none;
+                    outline: none;
+                    color: black;
+                    padding: 14px 16px;
+                    background-color: inherit;
+                    cursor: pointer;
+                }
+                
+                .container a:hover, .dropdown:hover .dropbtn {
+                    background-color: rgba(247, 205, 255, 0.36);
+                }
+                
+                .dropdown-content {
+                    display: none;
+                    position: absolute;
+                    background-color: rgba(249, 249, 249, 0.36);
+                    min-width: 160px;
+                    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                    z-index: 1;
+                }
+                
+                .dropdown-content a {
+                    float: none;
+                    color: black;
+                    padding: 12px 16px;
+                    text-decoration: none;
+                    display: block;
+                    text-align: left;
+                }
+                
+                .dropdown-content a:hover {
+                    background-color: rgba(221, 221, 221, 0.36);
+                }
+                
+                .dropdown:hover .dropdown-content {
+                    display: block;
+                }
+                .active {
+                    background-color: rgba(244, 220, 255, 0.36);
+                }
+
+    </style>
+
+<div class="container">
+    <header>  
+        <!--Meniul va fi pozitionat in dreapta sus-->
+        <div class="topright">
+            <strong>
+            <a href="#" style="text-decoration: none">AAA</a> <!--AAA se va pozitiona in dreapta-->
+            <div class="dropdown">
+                <button class="dropbtn"><b>Profil</b></button>
+                <div class="dropdown-content">
+                    <a href="#" style="text-decoration: none">Setari</a>
+                    <a href="#" style="text-decoration: none">Deconectare</a>
+                </div>
+            </div> 
+            <a href="#" style="text-decoration: none">BBB</a> <!--AAA se va pozitiona in stanga-->
+            </strong>
+        </div>
+    </header>
+</div>
+</body>
+</html>
