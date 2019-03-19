@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LostPets</title>
+    <link rel="stylesheet" type="text/css" href="css/headerfooter.css">
+    <link rel="stylesheet" type="text/css" href="css/selectors.css">
+    <link rel="stylesheet" type="text/css" href="css/postCard.css">
+    <link rel="stylesheet" type="text/css" href="css/post.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-limiter">
+            <h1><a href="#"><span>LostPets</span></a></h1>
+
+            <nav>
+                <a href="#"><span>Found pets</span></a>
+                <a href="#"><span>Missing pets</span></a>
+            </nav>
+
+            <div>
+                <button id="add" type="button"> <img src="icons/add.svg" alt="add post" /></button>
+                <button id="profile" type="button"> <img src="icons/profile.jpg" alt="avatar" /></button>
+            </div>
+        </div>
+    </header>
+    <div class="header-fixed-placeholder"></div>
+
+    <div class="post">
+        <div class="post-limiter">
+            <p class="title">My lost pet</p>
+            <div class="postCard">
+                <div class="imgPet">
+                    <img src="icons/doggo.jpg" alt="My pet" />
+                </div>
+                <div class="aboutPet">
+                    <div class="name">
+                        <img src="icons/gender-girl.svg" alt="gender" />
+                        <p>Bobita</p>
+                    </div>
+                    <div class="about">
+                        <div class="important">
+                            <p>Where was lost: <br> <span>Lascar Catargi, Copou</span></p>
+                            <p>Date: <span>12/03/2019</span></p>
+                        </div>
+                        <div class="important">
+                            <p>Breed: <span>Shih Tzu</span></p>
+                            <p>Height: <span>Small</span></p>
+                        </div>
+                        <div>
+                            <p>Color: <span>Brown-White</span></p>
+                            <p>Collar: <span>Black with orange charm</span></p>
+                        </div>
+                        <div class="descr">
+                            <p>About it <br> <span>She's very sweet and will come when you call her. She's very playful
+                                    and
+                                    loves kids.</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <form>
+        <div class="selectors-limiter">
+            <div class="selectors">
+                <select name="location">
+                    <option value="">Location</option>
+                    <option value="Copou">Copou</option>
+                    <option value="Unirii">Unirii</option>
+                </select>
+                <select name="specifics">
+                    <option value="">Breed</option>
+                    <option value="labrador">Labrador</option>
+                    <option value="bulldog">Bulldog</option>
+                    <option value="pug">Pug</option>
+                    <option value="chow chow">Chow Chow</option>
+                    <option value="german shepard">German Shepard</option>
+                    <option value="boxer">Boxer</option>
+                </select>
+                <div>
+                    <label for="missingPeriod"></label>
+                    <input type="date" name="misingPeriod" id="missingPeriod" data-polyfill="desktop">
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="feed">
+        <div class="feed-limiter">
+            <div class="card">
+                <div class="header">
+                    <img class="petImg" src="icons/doggo.jpg" alt="My Pet" />
+                    <div class="profile">
+                        <img class="avatar" src="icons/profile.jpg" alt="avatar" />
+                        <p> John </p>
+                    </div>
+                    <div class="btn">
+                        <button type="button"> <img src="icons/chat.svg" alt="chat" /> <span> +3 </span> </button>
+                        <button type="button"> <img src="icons/share.svg" alt="share" /> </button>
+                    </div>
+                </div>
+
+                <div class="footer">
+                    <div class="info">
+                        <div class="data">
+                            <img src="icons/gender-girl.svg" alt="gender" />
+                            <div class="name">
+                                <h2> Bobita </h2>
+                                <p> Shih Tzu</p>
+                            </div>
+                        </div>
+                        <div class="location">
+                            <img src="icons/location.svg" alt="location" />
+                            <p> Lascar Catargi, Copou, Iasi</p>
+                        </div>
+                        <div class="date">
+                            <img src="icons/calendar.svg" alt="date" />
+                            <p>12/03/2019</p>
+                        </div>
+                    </div>
+
+                    <button type="button"> Found it</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="header">
+                    <img class="petImg" src="icons/doggo.jpg" alt="My Pet" />
+                    <div class="profile">
+                        <img class="avatar" src="icons/profile.jpg" alt="avatar" />
+                        <p> John </p>
+                    </div>
+                    <div class="btn">
+                        <button type="button"> <img src="icons/chat.svg" alt="chat" /> <span> +3 </span> </button>
+                        <button type="button"> <img src="icons/share.svg" alt="share" /> </button>
+                    </div>
+                </div>
+
+                <div class="footer">
+                    <div class="info">
+                        <div class="data">
+                            <img src="icons/gender-girl.svg" alt="gender" />
+                            <div class="name">
+                                <h2> Bobita </h2>
+                                <p> Shih Tzu</p>
+                            </div>
+                        </div>
+                        <div class="location">
+                            <img src="icons/location.svg" alt="location" />
+                            <p> Lascar Catargi, Copou, Iasi</p>
+                        </div>
+                        <div class="date">
+                            <img src="icons/calendar.svg" alt="date" />
+                            <p>12/03/2019</p>
+                        </div>
+                    </div>
+
+                    <button type="button"> Found it</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="header">
+                    <img class="petImg" src="icons/doggo.jpg" alt="My Pet" />
+                    <div class="profile">
+                        <img class="avatar" src="icons/profile.jpg" alt="avatar" />
+                        <p> John </p>
+                    </div>
+                    <div class="btn">
+                        <button type="button"> <img src="icons/chat.svg" alt="chat" /> <span> +3 </span> </button>
+                        <button type="button"> <img src="icons/share.svg" alt="share" /> </button>
+                    </div>
+                </div>
+
+                <div class="footer">
+                    <div class="info">
+                        <div class="data">
+                            <img src="icons/gender-girl.svg" alt="gender" />
+                            <div class="name">
+                                <h2> Bobita </h2>
+                                <p> Shih Tzu</p>
+                            </div>
+                        </div>
+                        <div class="location">
+                            <img src="icons/location.svg" alt="location" />
+                            <p> Lascar Catargi, Copou, Iasi</p>
+                        </div>
+                        <div class="date">
+                            <img src="icons/calendar.svg" alt="date" />
+                            <p>12/03/2019</p>
+                        </div>
+                    </div>
+
+                    <button type="button"> Found it</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="header">
+                    <img class="petImg" src="icons/doggo.jpg" alt="My Pet" />
+                    <div class="profile">
+                        <img class="avatar" src="icons/profile.jpg" alt="avatar" />
+                        <p> John </p>
+                    </div>
+                    <div class="btn">
+                        <button type="button"> <img src="icons/chat.svg" alt="chat" /> <span> +3 </span> </button>
+                        <button type="button"> <img src="icons/share.svg" alt="share" /> </button>
+                    </div>
+                </div>
+
+                <div class="footer">
+                    <div class="info">
+                        <div class="data">
+                            <img src="icons/gender-girl.svg" alt="gender" />
+                            <div class="name">
+                                <h2> Bobita </h2>
+                                <p> Shih Tzu</p>
+                            </div>
+                        </div>
+                        <div class="location">
+                            <img src="icons/location.svg" alt="location" />
+                            <p> Lascar Catargi, Copou, Iasi</p>
+                        </div>
+                        <div class="date">
+                            <img src="icons/calendar.svg" alt="date" />
+                            <p>12/03/2019</p>
+                        </div>
+                    </div>
+
+                    <button type="button"> Found it</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="header">
+                    <img class="petImg" src="icons/doggo.jpg" alt="My Pet" />
+                    <div class="profile">
+                        <img class="avatar" src="icons/profile.jpg" alt="avatar" />
+                        <p> John </p>
+                    </div>
+                    <div class="btn">
+                        <button type="button"> <img src="icons/chat.svg" alt="chat" /> <span> +3 </span> </button>
+                        <button type="button"> <img src="icons/share.svg" alt="share" /> </button>
+                    </div>
+                </div>
+
+                <div class="footer">
+                    <div class="info">
+                        <div class="data">
+                            <img src="icons/gender-girl.svg" alt="gender" />
+                            <div class="name">
+                                <h2> Bobita </h2>
+                                <p> Shih Tzu</p>
+                            </div>
+                        </div>
+                        <div class="location">
+                            <img src="icons/location.svg" alt="location" />
+                            <p> Lascar Catargi, Copou, Iasi</p>
+                        </div>
+                        <div class="date">
+                            <img src="icons/calendar.svg" alt="date" />
+                            <p>12/03/2019</p>
+                        </div>
+                    </div>
+
+                    <button type="button"> Found it</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="header">
+                    <img class="petImg" src="icons/doggo.jpg" alt="My Pet" />
+                    <div class="profile">
+                        <img class="avatar" src="icons/profile.jpg" alt="avatar" />
+                        <p> John </p>
+                    </div>
+                    <div class="btn">
+                        <button type="button"> <img src="icons/chat.svg" alt="chat" /> <span> +3 </span> </button>
+                        <button type="button"> <img src="icons/share.svg" alt="share" /> </button>
+                    </div>
+                </div>
+
+                <div class="footer">
+                    <div class="info">
+                        <div class="data">
+                            <img src="icons/gender-girl.svg" alt="gender" />
+                            <div class="name">
+                                <h2> Bobita </h2>
+                                <p> Shih Tzu</p>
+                            </div>
+                        </div>
+                        <div class="location">
+                            <img src="icons/location.svg" alt="location" />
+                            <p> Lascar Catargi, Copou, Iasi</p>
+                        </div>
+                        <div class="date">
+                            <img src="icons/calendar.svg" alt="date" />
+                            <p>12/03/2019</p>
+                        </div>
+                    </div>
+
+                    <button type="button"> Found it</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-limiter">
+            <div class="description">
+                <h1><a href="#"><span>LostPets</span></a></h1>
+                <p>
+                    Working together regionally to provide and sustain a safe, secure and healthy community.
+                    If you've lost or found an animal, the resources on this page can help reunite the pet with its
+                    owner.
+                </p>
+            </div>
+            <div class="contact">
+                <ul>
+                    <li>Your profile</li>
+                    <li>Statistics</li>
+                    <li>Contact</li>
+                    <li>Settings</li>
+                </ul>
+            </div>
+            <div class="share">
+                <ul>
+                    <li><a href="https://www.facebook.com" target="_blank"><img src="icons/facebook.svg" alt="facebook" /></a>
+                    </li>
+                    <li><a href="https://www.instagram.com" target="_blank"><img src="icons/instagram.svg"
+                                alt="instagram" /></a></li>
+                    <li><a href="https://twitter.com" target="_blank"><img src="icons/twitter.svg" alt="twitter" /></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

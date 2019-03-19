@@ -1,0 +1,141 @@
+.post {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1400px;
+    margin: 25px auto;
+}
+
+.post .title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: #707070;
+}
+
+.post .postCard {
+    display: inline-block;
+    box-shadow: 0 0 5px 2px #bcc2c6;
+    border-radius: 25px;
+}
+
+.post .postCard .imgPet {
+    float: left;
+    overflow: hidden;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    margin: 0;
+    max-height: 400px;
+}
+
+.post .postCard .aboutPet {
+    overflow: hidden;
+    padding: 0 20px;
+    max-height: 400px;
+}
+
+.post .postCard .aboutPet .name {
+    font-size: 28px;
+    font-weight: 900;
+    color: #404247;
+}
+
+.post .postCard .aboutPet .name p {
+    display: inline-block;
+    margin: 0;
+}
+
+.post .postCard .imgPet img {
+    height: 400px;
+    width: 500px;
+}
+
+.post .postCard .aboutPet .about div {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.post .postCard .aboutPet .about div p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #404247;
+    display: inline-block;
+    width: 200px;
+}
+
+.post .postCard .aboutPet .about div span {
+    font-size: 14px;
+    font-weight: normal;
+    color: #404247;
+    display: block;
+}
+
+.post .postCard .aboutPet .about .descr p {
+    width: 400px;
+}
+
+/* RESPONSIVE */
+
+@media all and (max-width: 850px) {
+    .post .title {
+        font-size: 20px;
+    }
+    .post .postCard {
+        max-width: 600px;
+    }
+    .post .postCard .imgPet {
+        max-height: 200px;
+    }
+    .post .postCard .imgPet img {
+        margin: 0;
+        height: 200px;
+        width: 300px;
+    }
+    .post .postCard .aboutPet {
+        max-height: 200px;
+    }
+    .post .postCard .aboutPet .name {
+        font-size: 20px;
+    }
+    .post .postCard .aboutPet .about div p {
+        font-size: 14px;
+        margin: 2px 0;
+    }
+    .post .postCard .aboutPet .about div span {
+        font-size: 10px;
+    }
+}
+
+@media all and (max-width: 600px) {
+    .post .postCard {
+        max-width: 400px;
+    }
+    .post .postCard .imgPet {
+        max-height: 150px;
+    }
+    .post .postCard .imgPet img {
+        margin: 0;
+        height: 150px;
+        width: 200px;
+    }
+    .post .postCard .aboutPet {
+        max-height: 150px;
+    }
+    .post .postCard .aboutPet .name {
+        font-size: 20px;
+    }
+    .post .postCard .aboutPet .about div p {
+        font-size: 14px;
+        margin: 2px 0;
+    }
+    .post .postCard .aboutPet .about div span {
+        font-size: 10px;
+    }
+    .post .postCard .aboutPet .about .descr{
+        display: none;
+    }
+    .post .postCard .aboutPet .about .important{
+        display: inline-block;
+    }
+}
