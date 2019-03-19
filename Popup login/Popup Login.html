@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login popup</title>
+  <link rel="stylesheet" type="text/css" href="login-popup.css">
+</head>
+
+<body>
+    <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+    <div id="id01" class="modal">
+      <form class="modal-content animate" action="/my-handling-form-page" method="post">
+        <div class="stg">
+          <h1 class="wbmesaj">Welcome back!</h1>
+          <div class="marg">
+            <label for="email" ><b>Email</b></label>
+            <input type="email" id="email" name="email" style="width:335px;height:23px;" required>
+          </div>
+          <div class="marg">
+            <label for="psw"><b>Password</b></label>
+            <input type="password" id="psw" name="psw" style="width:335px;height:23px;" minlength="6" required>  
+          </div>
+          <div class="marg">
+            <label>
+              <input type="checkbox" checked="checked" name="remember" > Keep me logged in
+            </label>
+          </div>
+          <br>
+          
+          <button type="submit" class="login_button"><b>Login</b></button>
+          
+          <div class="marg">
+            <div style="display:inline-block; float: left;">
+                <a href="#"><span>Not a member yet?</span></a>
+            </div>
+            
+            <div style="display:inline-block; float: right;">
+              <a href="#"><span>Forgot your password?</span></a>
+            </div>
+
+          </div>
+
+        </div>
+        
+        <div class="avatar">
+        <img src="login.svg" alt="Avatar"> <!-- style="margin-left:0px;" --> 
+        </div>
+
+        <div class="closebtn">
+          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+        </div>
+      </form>
+    </div>
+        
+        <script>
+    // Get the modal
+    var modal = document.getElementById('id01');
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    </script>
+    
+    </body>
+    </html>    
