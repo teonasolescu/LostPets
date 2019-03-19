@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="31.579" height="31.859" viewBox="0 0 31.579 31.859">
+  <g id="Group_33" data-name="Group 33" transform="translate(-442 -398)">
+    <path id="chat" d="M29.069,24.754a14.538,14.538,0,0,0,2.509-8.163C31.579,8.27,24.5,1.5,15.789,1.5S0,8.27,0,16.591,7.083,31.682,15.789,31.682a16.278,16.278,0,0,0,6.444-1.312,26.911,26.911,0,0,0,8.746,2.984.461.461,0,0,0,.073.006.524.524,0,0,0,.471-.31.585.585,0,0,0-.1-.644C30.214,31.12,29.381,28.407,29.069,24.754Z" transform="translate(442 396.5)" fill="#fff"/>
+    <text id="_3" data-name="+3" transform="translate(449.802 417.182)" fill="#ff8463" font-size="12" font-family="SegoeUI-Bold, Segoe UI" font-weight="700"><tspan x="0" y="0">+3</tspan></text>
+  </g>
+</svg>
