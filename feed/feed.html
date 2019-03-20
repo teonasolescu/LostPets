@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="css/headerfooter.css">
     <link rel="stylesheet" type="text/css" href="css/selectors.css">
     <link rel="stylesheet" type="text/css" href="css/postCard.css">
+    <link rel="stylesheet" type="text/css" href="css/meniu.css">
 </head>
 
 <body>
@@ -24,6 +25,36 @@
             <div>
                 <a id="add" href="create-post.html"> <img src="icons/add.svg" alt="add post" /></a>
                 <button id="profile" type="button"> <img src="icons/profile.jpg" alt="avatar" /></button>
+
+                <div>
+                    <aside class="menu">
+                        <div class="lista">
+                            <p>Menu</p>
+
+                            <ul>
+                                <li><a href=""><b>Notificari</b></a></li>
+                                <li><a href=""><b>Setari</b></a></li>
+                                <li><a href=""><b>Deconectare</b></a></li>
+                                <li class="spsp"><a href="#"><b>Exit</b></a></li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+
+                <script>
+                    let profile = document.getElementById('profile');
+                    let menu = document.querySelector('.menu');
+
+                    profile.addEventListener('click', () => {
+                        menu.classList.add('is--open');
+                    });
+
+                    document.addEventListener('keyup', (e) => {
+                        if (e.key === 'Escape' || e.keyCode === 27) {
+                            menu.classList.remove('is--open');
+                        }
+                    })
+                </script>
             </div>
         </div>
     </header>
