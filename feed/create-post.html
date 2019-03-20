@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LostPets</title>
+    <link rel="stylesheet" type="text/css" href="css/headerfooter.css">
+    <link rel="stylesheet" type="text/css" href="css/create-post.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="header-limiter">
+            <h1><a href="#"><span>LostPets</span></a></h1>
+
+            <nav>
+                <a href="#"><span>Found pets</span></a>
+                <a href="#"><span>Missing pets</span></a>
+            </nav>
+
+            <div>
+                <button id="add" type="button"> <img src="icons/add.svg" alt="add post" /></button>
+                <button id="profile" type="button"> <img src="icons/profile.jpg" alt="avatar" /></button>
+            </div>
+        </div>
+    </header>
+    <div class="header-fixed-placeholder"></div>
+
+    <form class="post-pet">
+        <div class="post-pet-limiter">
+            <div class="header">
+                <img src="icons/lab1.jpg" alt="labrador" />
+                <img src="icons/lab2.jpg" alt="labrador" />
+                <img src="icons/lab3.jpg" alt="labrador" />
+                <button><img src="icons/plus.svg" alt="add" /></button>
+            </div>
+            <div class="footer">
+                <div class="characteristics">
+                    <div class="title">
+                        <span> Pet characteristics</span>
+                    </div>
+                    <div class="main">
+                        <div class="opt">
+                            <label for="name">Name</label>
+                            <input type="text" name="name" id="name" maxlength="20">
+                        </div>
+
+                        <div class="opt gender">
+                            <span>Gender</span>
+                            <select name="gender">
+                                <option value="">-- select an option --</option>
+                                <option value="female">Female</option>
+                                <option value="male">Male</option>
+                            </select>
+                        </div>
+
+                        <div class="opt hgt">
+                            <span>Height</span>
+                            <select name="height">
+                                <option value="">-- select an option --</option>
+                                <option value="tall">Tall</option>
+                                <option value="medium">Medium</option>
+                                <option value="small">Small</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="bottom">
+                        <div class="details">
+                            <div class="group">
+                                <div class="opt">
+                                    <span>Breed</span><br>
+                                    <select name="breed">
+                                        <option value="">-- select an option --</option>
+                                        <option value="labrador">Labrador</option>
+                                        <option value="bulldog">Bulldog</option>
+                                        <option value="pug">Pug</option>
+                                        <option value="chow chow">Chow Chow</option>
+                                        <option value="german shepard">German Shepard</option>
+                                        <option value="boxer">Boxer</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+
+                                <div class="opt">
+                                    <span>Color</span><br>
+                                    <select name="color">
+                                        <option value="">-- select an option --</option>
+                                        <option value="black">Black</option>
+                                        <option value="brown">Brown</option>
+                                        <option value="White">White</option>
+                                        <option value="Golden">Golden</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="group">
+                                <div class="opt">
+                                    <label for="collar">Collar</label><br>
+                                    <input type="text" name="collar" id="collar" maxlength="30">
+                                </div>
+                                <div class="opt">
+                                    <label for="age">Age</label><br>
+                                    <input type="number" name="age" id="age" min="0" max="10">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="about">
+                            <label for="about">About</label>
+                            <input type="text" name="about" id="about" maxlength="250">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="loss-info">
+                    <div class="title">
+                        <span class="title">Loss info</span>
+                    </div>
+                    <div>
+                        <div class="opt">
+                            <label for="date">Date of loss</label>
+                            <input type="date" name="misingPeriod" id="date" data-polyfill="desktop">
+                        </div>
+                        <div class="opt">
+                            <span>Location</span>
+                            <img src="icons/map.png" alt="map" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bounty">
+                    <div class="title">
+                        <span class="title">Bounty</span>
+                    </div>
+                    <div>
+                        <div class="opt">
+                            <span>Bounty</span>
+                            <div>
+                                <input type="radio" name="yes" id="yes"><label for="yes">Yes</label>
+                                <input type="radio" name="no" id="no"> <label for="no">No</label>
+                            </div>
+                        </div>
+                        <div class="opt">
+                            <label for="reward">Reward</label>
+                            <input type="number" name="reward" id="reward" min="0">
+                        </div>
+                    </div>
+                    <button type="button">Post announcement</button>
+                </div>
+
+            </div>
+        </div>
+    </form>
+
+    <footer>
+        <div class="footer-limiter">
+            <div class="description">
+                <h1><a href="#"><span>LostPets</span></a></h1>
+                <p>
+                    Working together regionally to provide and sustain a safe, secure and healthy community.
+                    If you've lost or found an animal, the resources on this page can help reunite the pet with its
+                    owner.
+                </p>
+            </div>
+            <div class="contact">
+                <ul>
+                    <li>Your profile</li>
+                    <li>Statistics</li>
+                    <li>Contact</li>
+                    <li>Settings</li>
+                </ul>
+            </div>
+            <div class="share">
+                <ul>
+                    <li><a href="https://www.facebook.com" target="_blank"><img src="icons/facebook.svg"
+                                alt="facebook" /></a>
+                    </li>
+                    <li><a href="https://www.instagram.com" target="_blank"><img src="icons/instagram.svg"
+                                alt="instagram" /></a></li>
+                    <li><a href="https://twitter.com" target="_blank"><img src="icons/twitter.svg" alt="twitter" /></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
