@@ -102,6 +102,8 @@ input {
   overflow: auto; /* Enable scroll if needed */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   margin: 0 auto;
+  
+  max-width: 100vw;
   box-sizing: border-box;
 }
 
