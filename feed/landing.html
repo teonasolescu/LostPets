@@ -8,6 +8,8 @@
     <title>LostPets</title>
     <link rel="stylesheet" type="text/css" href="css/footer.css">
     <link rel="stylesheet" type="text/css" href="css/landing.css">
+    <link rel="stylesheet" type="text/css" href="css/login-popup.css">
+    <link rel="stylesheet" type="text/css" href="css/signup-popup.css">
 </head>
 
 <body>
@@ -18,20 +20,160 @@
         <div id="menu">
             <a href="#About"><span>About</span></a>
             <a href="#Steps"><span>Steps</span></a>
-            <a href="contact.html"><span>Contact</span></a>
+            <a href="#"><span>Contact</span></a>
         </div>
 
         <div class="buttons">
-            <button id="signin" type="button">Sign in</button>
-            <button id="signup" type="button">Sign up</button>
+            <button id="signin" type="button" onclick="document.getElementById('id01').style.display='block'"
+                style="width:auto;">Sign in</button>
+
+            <div id="id01" class="modal">
+                <form class="modal-content animate" action="/my-handling-form-page" method="post">
+                    <div class="stg">
+                        <h1 class="wbmesaj">Welcome back!</h1>
+                        <div class="marg">
+                            <label for="email"><b>Email</b></label>
+                            <input type="email" id="email" name="email" style="width:100%;height:23px;" required>
+                        </div>
+                        <div class="marg">
+                            <label for="psw"><b>Password</b></label>
+                            <input type="password" id="psw" name="psw" style="width:100%;height:23px;" minlength="6"
+                                required>
+                        </div>
+                        <div class="marg">
+                            <label>
+                                <input type="checkbox" checked="checked" name="remember"> Keep me logged in
+                            </label>
+                        </div>
+                        <br>
+
+                        <button type="button" class="login_button"><a href="profile.html"> <b>Login</b></a></button>
+
+                        <div class="marg">
+                            <div style="display:inline-block;">
+                                <a href="#"><span>Not a member yet?</span></a>
+                            </div>
+
+                            <div style="display:inline-block;">
+                                <a href="#"><span>Forgot your password?</span></a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="avatar">
+                        <img src="icons/login.svg" alt="Avatar"> 
+                    </div>
+
+                    <div class="closebtn">
+                        <span onclick="document.getElementById('id01').style.display='none'" class="close"
+                            title="Close Modal">&times;</span>
+                    </div>
+                </form>
+            </div>
+
+            <script>
+                // Get the modal
+                var modal = document.getElementById('id01');
+
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function (event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                }
+            </script>
+
+
+            <button id="signup" type="button" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign up</button>
+
+            <div id="id02" class="modal">
+                <form class="modal-content animate" action="/my-handling-form-page" method="post">
+                    <div class="stg">
+                        <h1 class="wbmesaj">Your first step to make a pet happy again</h1>
+                        <div class="tabelestg">
+                            <div>
+                                <div>
+                                    <label for="fname">First name</label>
+                                    <input type="text" id="fname" name="first_name" style="width:100%;height:23px;"
+                                        required>
+                                </div>
+                                <div>
+                                    <label for="telnr">Phone number</label>
+                                    <input type="number" id="telnr" name="Numar_telefon" style="width:100%;height:23px;"
+                                        required>
+                                </div>
+                                <div>
+                                    <label for="psw">Password</label>
+                                    <input type="password" id="psw" name="pass" style="width:100%;height:23px;"
+                                        minlength="6" required>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div>
+                                    <label for="lname">Last name</label>
+                                    <input type="text" id="lname" name="last_name" style="width:100%;height:23px;"
+                                        required>
+                                </div>
+                                <div>
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" name="email" style="width:100%;height:23px;"
+                                        required>
+                                </div>
+                                <div>
+                                    <label for="pswc">Password confirmation</label>
+                                    <input type="password" id="pswc" name="passc" style="width:100%;height:23px;"
+                                        minlength="6" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="marg">
+                            <label>
+                                <input type="checkbox" name="terms"> I agree with LostPets terms and services.
+                            </label>
+                        </div>
+                        <br>
+
+                        <div>
+                            <button type="button" class="signup_button"><a href="profile.html"><b>Sign up</b></a></button>
+                        </div>
+
+                    </div>
+
+                    <div class="avatar">
+                        <img src="icons/signup.svg" alt="Avatar">
+                    </div>
+
+                    <div class="closebtn">
+                        <span onclick="document.getElementById('id02').style.display='none'" class="close"
+                            title="Close Modal">&times;</span>
+                    </div>
+                </form>
+            </div>
+
+            <script>
+                // Get the modal
+                var modal = document.getElementById('id01');
+
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function (event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                }
+            </script>
         </div>
     </nav>
+
 
     <header>
         <div class="description">
             <h2>Have you lost your pet?</h2>
             <h4>When you searched everywhere and you've lost your hope of seeing it again, we can help you.</h4>
-            <button type="button"> Find your pet</button>
+            <button type="button">Find your pet</button>
         </div>
 
         <div class="image">
@@ -138,8 +280,10 @@
             </div>
             <div class="contact">
                 <ul>
+                    <li><a href="profile.html">My profile</a></li>
                     <li><a href="statistics.html"> Statistics</a></li>
                     <li><a href="contact.html">Contact</a> </li>
+                    <li><a href="settings.html">Settings</a></li>
                 </ul>
             </div>
             <div class="share">
