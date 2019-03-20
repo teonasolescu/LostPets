@@ -32,21 +32,6 @@
 .post-pet .header button img{
     width: 30px;
 }
-.footer button{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    background-color: #FFAD00;
-    color: white;
-    font-weight: bold;
-    font-size: 15px;
-    width: 190px;
-    height: 90px;
-    border: none;
-    border-top-left-radius: 40px;
-    border-bottom-right-radius: 15px;
-    transform: translate(10px, 0);
-}
 .footer{
     margin: 0 10px;
     display: flex;
@@ -150,4 +135,31 @@
 }
 .footer .characteristics .main .opt.hgt{
     transform: translate(-85px, 0);
+}
+.footer .bounty #announcement{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #FFAD00;
+    font-weight: bold;
+    font-size: 15px;
+    width: 190px;
+    height: 80px;
+    border: none;
+    text-align: center;
+    vertical-align: center;
+    border-top-left-radius: 40px;
+    border-bottom-right-radius: 15px;
+    transform: translate(10px, 0);
+    margin-top: 20px;
+}
+.footer .bounty #announcement a{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer .bounty #announcement a span{
+    margin: 24px;
+    color: white;
 }
