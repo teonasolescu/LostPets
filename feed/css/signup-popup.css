@@ -6,7 +6,7 @@ input[type=email], input[type=password], input[type=text], input[type=number] {
   display: block;
   border: 1px solid #CFCFCF;
   box-sizing: border-box;
-  text-size-adjust: 14px;
+  font-size: 14px;
   color: #707070;
 }
 
@@ -59,7 +59,7 @@ input[type=email], input[type=password], input[type=text], input[type=number] {
 
 .wbmesaj {
   color: #FFAD00;
-  text-size-adjust: 34px;
+  font-size: 34px;
   text-align: center;
   margin-bottom: 15px;
 }
@@ -80,7 +80,7 @@ input[type=email], input[type=password], input[type=text], input[type=number] {
 
 .marg a {
   display: block;
-  text-size-adjust: 12px;
+  font-size: 12px;
   color: #616163;
 }
 
