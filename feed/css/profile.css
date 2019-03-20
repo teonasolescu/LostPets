@@ -1,0 +1,156 @@
+.placeholder {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 50px;
+    width: 95%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.profile-card {
+    width: 250px;
+    height: 430px;
+    border-radius: 12px;
+    box-shadow: 0 3px 5px #ECECEF;
+    padding: 20px;
+}
+
+.person {
+    display: flex;
+    align-items: center;
+    padding: 15px 10px 30px 10px;
+}
+
+.person h4 {
+    font-size: 18px;
+    padding: 0 20px;
+}
+
+.person img {
+    border: 2px solid #CFCFCF;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+}
+
+.profile-card .profile-field {
+    display: inline-flex;
+    align-items: flex-start;
+    width: 250px;
+}
+
+.profile-card .profile-field img {
+    padding: 3px 10px;
+}
+
+.profile-card .profile-field h5 {
+    margin: 0;
+    color: #404247;
+}
+
+.profile-card .profile-field p {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #707070;
+}
+
+.badges {
+    width: 250px;
+    height: 40px;
+    border-radius: 12px;
+    box-shadow: 0 3px 5px #ECECEF;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pets {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 0 10px;
+}
+
+.badges img {
+    padding: 0 15px;
+}
+
+.pet-card {
+    width: 300px;
+    height: 550px;
+    border-radius: 12px;
+    box-shadow: 0 3px 5px #ECECEF;
+    overflow: hidden;
+    display: block;
+    margin: 0 10px 0 0;
+}
+
+.pet-card img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.pet-card p {
+    font-size: 14px;
+    display: inline;
+}
+
+.pet-card h5 {
+    display: inline;
+}
+
+.pet-card .trait {
+    padding: 5px 15px;
+}
+
+.pet-card .pets-name {
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px;
+}
+
+.pet-card .pets-name h4 {
+    font-size: 24px;
+    margin: 0;
+    padding: 0 20px;
+}
+
+h3 {
+    padding-top: 30px;
+    text-align: center;
+    color: #C0C4C5;
+}
+
+.found-pets {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0 50px 0;
+    width: 95%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.found-pets .pet-card {
+    height: 320px;
+}
+
+.found-pets .pet-card .profile-field {
+    display: flex;
+    padding: 0 10px;
+}
+
+.found-pets .pet-card .profile-field p {
+    padding: 0 15px;
+    margin: 0;
+}
+.profile .badges img{
+    width: 30px;
+}
+.placeholder .limiter{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+}

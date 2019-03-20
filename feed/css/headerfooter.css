@@ -96,6 +96,10 @@ footer .footer-limiter {
 footer .footer-limiter .contact{
     transform: translate(0, -15px);
 }
+footer .footer-limiter .contact a{
+	text-decoration: none;
+	color: #404247;
+}
 footer .footer-limiter .contact, footer .footer-limiter .share {
     width: 250px;
 }

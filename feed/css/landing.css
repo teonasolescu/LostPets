@@ -1,0 +1,269 @@
+body{
+    font-family: "Segoe UI", sans-serif;
+    margin: 0;
+}
+
+h2{
+    font-size:42px;
+    font-weight: 900;
+    color: #707070;
+}
+
+h3{
+    font-size:34px;
+    font-weight: bold;
+    color: white;
+}
+
+h4{
+    font-size:28px;
+    font-weight: normal;
+    color: #707070;
+}
+
+p{
+    font-size:18px;
+    font-weight: normal;
+    color: white;
+}
+
+/*NAV BAR*/
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    padding: 20px 0;
+    
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+nav h1{
+    margin: 0;
+}
+
+nav #logo span{
+    color: #404247;
+    font-size: 28px;
+    font-weight: bolder;
+    padding: 0;
+}
+
+nav a{
+    text-decoration: none;
+    padding: 20px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #404247;
+    
+}
+
+nav menu{
+    margin: 0 30px 0 30px;
+    display: flex;
+    justify-content: flex-start;
+    
+}
+
+#signup{
+    color: #FFAD00;
+    border: 1px solid #FFAD00;
+    font-weight: bold;
+    border-radius: 12px;
+    padding: 11px 48px 11px 48px;
+    background: none;
+    cursor: pointer;
+}
+
+#signin{
+    color: #707070;
+    border-radius: 12px;
+    font-weight: bold;
+    border: none;
+    background: none;
+    padding: 11px 48px 11px 48px;
+    cursor: pointer;
+}
+
+/*HEADER*/
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 0;
+    text-align: left;
+    
+    width: 95%;
+    max-width: 1600px;
+    margin:0 auto;
+}
+
+.image img{
+    max-width: 500px;
+    object-fit: contain;
+}
+
+.description{
+    padding-right:100px;
+    max-width: 830px; 
+}
+
+.description h2, .description h4{
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+
+.description button{
+    background: #FFAD00;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 18px;
+    font-weight: normal;
+    padding: 16px 90px;
+    margin-top: 60px;
+    cursor: pointer;
+}
+
+.full-width{
+    background-color: #FF8463;
+    width: 100%;
+    margin: 0 auto;
+    padding: 80px 0;
+    text-align: center;
+}
+
+/*OUR MISSION*/
+.mission{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    
+    width: 95%;
+    max-width: 1600px;
+    margin: 0 auto;   
+}
+
+.full-width h2{
+    color: white;
+    padding: 0 0 30px 0;
+    margin: 0;
+}
+
+/*STEPS*/
+
+.steps{
+    text-align: left;
+    padding: 0px 0 170px 0;
+    
+    width: 95%;
+    max-width: 1600px;
+    margin:0 auto;
+}
+
+.steps h2{
+    text-align: center;
+    padding: 80px 0 0 0;
+    margin: 0;
+}
+
+.steps h3{
+    color: #FF8463;
+}
+
+.steps p{
+    color: #707070;
+    font-weight: bold;
+}
+.steps img{
+    max-width: 500px;
+    max-height: 450px;
+}
+
+.steps .left{
+    display: flex;
+    align-items: center; 
+    padding: 80px 0px;
+    justify-content: space-between;
+}
+
+.steps .right{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.steps .left h3,.steps .left p{
+    padding-right:150px;
+    max-width: 500px; 
+}
+
+.steps .right h3,.steps .right p{
+    padding-left:150px;
+    max-width: 500px;
+}
+
+/*TESTIMONIALE CU BOBITA*/
+
+.testimonials{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    height: 350px;
+    
+    width: 95%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.testimonials .card{
+    width: 530px;
+    height: 550px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 0 10px;
+    box-shadow: 0px 3px 8px 2px rgb(50,50,0,0.3);
+    top: 0;
+    transform: translate(0,-10%);
+}
+
+.testimonials .card img{
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.testimonials .card h3,.testimonials .card p{
+    color: #707070;
+    text-align: left;
+    padding: 0 30px;
+}
+
+.testimonials .card .owner{
+    color: #707070;
+    text-align: right;
+    padding: 0 30px;
+}
+
+.testimonials .card h3{
+    margin: 20px 0 0 0;   
+}
+
+.orange-bg{
+    background: #FFAD00;
+}
+
+.orange-bg .footer-limiter .description h1 a span{
+    color: white;
+}
+
+
