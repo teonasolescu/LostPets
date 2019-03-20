@@ -1,0 +1,173 @@
+.modal{
+    display: flex;
+    justify-content: center;
+    max-width: 1300px;
+    font-family: "Segoe UI";
+}
+
+.modal>.left{
+    width: 750px;
+    display: flex;
+    justify-content: space-between;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 0 10px;
+    box-shadow: 0px 3px 8px 2px rgb(50,50,0,0.3);
+}
+
+.modal .left .left{
+    margin-bottom: 20px;
+}
+
+.modal .left .left>img{
+    padding:20px 15px 0 20px;
+    width: 340px;
+    height: 280px;
+    object-fit: cover;
+}
+
+.modal .left .left .preview{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 340px;
+    height: 80px;
+    padding: 3px 15px;
+}
+
+.modal .left .left .preview img{
+    object-fit: cover;
+    width:80px;
+    height:80px;
+}
+.modal .left>.right{
+    width:450px;
+    padding: 20px;
+    position: relative;
+}
+
+.modal .left>.right p{
+    margin:0;
+    font-size: 14px;
+    color: #707070;
+}
+
+.modal .left>.right h5{
+    margin-top: 10px;
+    margin-bottom:0;
+    font-size: 14px;
+    font-weight: bold;
+    color: #707070;
+}
+
+.modal .left>.right .info{
+    padding-bottom:20px;
+}
+
+.modal .left>.right .info .trait{
+    width: 150px;
+    padding-right: 10px;
+    display: inline-block;
+}
+
+.modal .left>.right .info .long{
+    width: 300px;
+}
+
+.modal .left>.right h2{
+    color:#C0C4C5;
+    font-size: 28px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.modal .left .right button{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #FFAD00;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    width: 118px;
+    height: 69px;
+    border: none;
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 12px;
+}
+
+.modal>.right{
+    width: 500px;
+    display: block;
+    justify-content: center;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 0 10px;
+    padding: 20px 20px;
+    box-shadow: 0px 3px 8px 2px rgb(50,50,0,0.3);
+}
+
+.modal>.right .info p{
+    font-size: 10px;
+    margin: 0;
+    display: inline;
+}
+
+.modal>.right h5{
+    font-size: 12px;
+    margin: 0;
+}
+
+.modal>.right .comment{
+    border-top: 2px solid #F7F7FB;
+    max-width: 470px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-height: 100px;
+    margin: 20px 0;
+    padding-top: 15px;
+}
+
+.modal>.right .info{
+    width: 200px;
+}
+
+.modal>.right img:first-of-type{
+    object-fit: cover;
+    width:50px;
+    height:50px;
+    border-radius: 100%;
+    border: 2px solid #C0C4C5;
+    margin: 0 10px 0 0 ;
+}
+
+.modal>.right img:last-of-type{
+    object-fit: cover;
+    width:50px;
+    height:50px;
+    border: 1px solid #C0C4C5;
+    margin: 0 10px;
+}
+
+.modal>.right .buttons{
+    /* margin: 0 0 0 10px; */
+    max-width: 70px;
+
+}
+
+.modal>.right button{
+    background: none;
+    border: none;
+    color: #C0C4C5;
+    padding: 2px 21px;
+}
+
+.modal>.right .buttons .colorful{
+    border: none;
+    background:#FFAD00;
+    color: white;
+    padding: 2px 20px;
+}
