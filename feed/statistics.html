@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>LostPets</title>
-
     <link rel="stylesheet" type="text/css" href="css/headerfooter.css">
+    <link rel="stylesheet" type="text/css" href="css/statistics.css">
 </head>
 
 <body>
@@ -30,49 +30,50 @@
 
     <div class="post">
         <div class="post-limiter">
-            <p class="title">Statistics</p>
-            <div class="postCard">
-                    <canvas id="myChart" width="400" height="400"></canvas>
-                    <script>
-                    var ctx = document.getElementById('myChart').getContext('2d');
-                    var myChart = new Chart(ctx, {
-                        type: 'bar',
-                        data: {
-                            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-                            datasets: [{
-                                label: '# of Votes',
-                                data: [12, 19, 3, 5, 2, 3],
-                                backgroundColor: [
-                                    'rgba(255, 99, 132, 0.2)',
-                                    'rgba(54, 162, 235, 0.2)',
-                                    'rgba(255, 206, 86, 0.2)',
-                                    'rgba(75, 192, 192, 0.2)',
-                                    'rgba(153, 102, 255, 0.2)',
-                                    'rgba(255, 159, 64, 0.2)'
-                                ],
-                                borderColor: [
-                                    'rgba(255, 99, 132, 1)',
-                                    'rgba(54, 162, 235, 1)',
-                                    'rgba(255, 206, 86, 1)',
-                                    'rgba(75, 192, 192, 1)',
-                                    'rgba(153, 102, 255, 1)',
-                                    'rgba(255, 159, 64, 1)'
-                                ],
-                                borderWidth: 1
-                            }]
-                        },
-                        options: {
-                            scales: {
-                                yAxes: [{
-                                    ticks: {
-                                        beginAtZero: true
-                                    }
-                                }]
-                            }
-                        }
-                    });
-                    </script>
+            <div class="header">
+                <p class="title">Statistics</p>
+
+                <div class="topright">
+                    <strong>
+                        <div class="dropdown">
+                            <button class="dropbtn"><b>Download</b></button>
+                            <div class="dropdown-content">
+                                <a href="#" style="text-decoration: none">CSV</a>
+                                <a href="#" style="text-decoration: none">PDF</a>
+                            </div>
+                        </div>
+                    </strong>
+                </div>
             </div>
+
+            <div id="piechart"></div>
+
+            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+            <script type="text/javascript">
+                // Load google charts
+                google.charts.load('current', { 'packages': ['corechart'] });
+                google.charts.setOnLoadCallback(drawChart);
+
+                // Draw the chart and set the chart values
+                function drawChart() {
+                    var data = google.visualization.arrayToDataTable([
+                        ['Task', 'Hours per Day'],
+                        ['Labrador', 3],
+                        ['Bulldog', 2],
+                        ['Beagel', 4],
+                        ['Bishon', 9],
+                        ['Yorkshire', 7]
+                    ]);
+
+                    // Optional; add a title and set the width and height of the chart
+                    var options = { 'title': 'Most lost breeds', 'width': 600, 'height': 600 };
+
+                    // Display the chart inside the <div> element with id="piechart"
+                    var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+                    chart.draw(data, options);
+                }
+            </script>
         </div>
     </div>
     </div>
