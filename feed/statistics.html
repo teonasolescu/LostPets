@@ -34,23 +34,21 @@
                 <p class="title">Statistics</p>
 
                 <div class="topright">
-                    <strong>
-                        <div class="dropdown">
-                            <button class="dropbtn"><b>Download</b></button>
-                            <div class="dropdown-content">
-                                <a href="#" style="text-decoration: none">CSV</a>
-                                <a href="#" style="text-decoration: none">PDF</a>
-                            </div>
+                    <div class="dropdown">
+                        <button class="dropbtn"><b>Download</b></button>
+                        <div class="dropdown-content">
+                            <a href="#" style="text-decoration: none">CSV</a>
+                            <a href="#" style="text-decoration: none">PDF</a>
                         </div>
-                    </strong>
+                    </div>
                 </div>
             </div>
 
             <div id="piechart"></div>
 
-            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+            <script src="https://www.gstatic.com/charts/loader.js"></script>
 
-            <script type="text/javascript">
+            <script>
                 // Load google charts
                 google.charts.load('current', { 'packages': ['corechart'] });
                 google.charts.setOnLoadCallback(drawChart);
@@ -75,7 +73,6 @@
                 }
             </script>
         </div>
-    </div>
     </div>
 
     <footer>
