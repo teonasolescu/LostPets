@@ -97,8 +97,8 @@ input {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
-  width: 100%; /* Full width */
-
+  width: 2000px; /* Full width */
+  
   overflow: auto; /* Enable scroll if needed */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   margin: 0 auto;
@@ -110,7 +110,6 @@ input {
   background-color: #fefefe;
   margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid #888;
-  width: 1088px;
   height: 100%;
   border-radius: 20px;
   box-shadow:0 0 5px gray;

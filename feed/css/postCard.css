@@ -85,7 +85,7 @@
     color: #696969;
 }
 
-.card .footer button {
+.card .footer .found {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -93,11 +93,23 @@
     color: white;
     font-weight: bold;
     font-size: 18px;
-    width: 118px;
+    width: 120px;
     height: 69px;
     border: none;
+    text-align: center;
+    text-decoration: none;
     border-top-left-radius: 15px;
     border-bottom-right-radius: 15px;
+}
+.card .footer .found a{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card .footer .found a span{
+    margin: 24px;
+    color: white;
 }
 
 .card .footer .info {
