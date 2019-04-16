@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI';
+    font-size: 18px;
+}
+header{
+    text-align: center;
+    margin: 0 10%;
+    border-bottom: 2px solid darkblue;
+}
+main{
+    display: block;
+}
+main div{
+    margin: 50px 15%;
+}
+main div dl{
+    margin: 0 20px;
+}
+main section{
+    margin: 0 15%;
+}
+section p{
+    margin: 5px 0;
+    text-indent: 30px;
+}
