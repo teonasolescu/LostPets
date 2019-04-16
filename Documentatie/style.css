@@ -39,3 +39,6 @@ section p{
     color: red;
     font-size: 22px;
 }
+#func ul{
+    list-style-type: square;
+}
