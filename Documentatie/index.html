@@ -22,9 +22,10 @@
                 <li><a href="#use-case">Use-case</a>
                 </li>
                 <li><a href="#db">Baza de date</a></li>
-                <li><a href="#func">Functionalitati</a>
-                </li>
                 <li><a href="#mvc">Design pattern</a></li>
+                <li><a href="#func">Flow-ul aplicatiei</a>
+                </li>
+                <li><a href="auth">Autentificare</a></li>
                 <li><a href="#map">Open Street Map</a></li>
                 <li><a href="#statistics">Statistici</a>
                 </li>
@@ -63,9 +64,15 @@
 
         <section id="use-case">
             <h2><span>2. </span>Use-cases</h2>
-            <p>
-
-            </p>
+            <img src="img/Use Case/Use Case Diagram - Landing page.jpg" alt="post"/>
+            <img src="img/Use Case/Use Case Diagram - Profile.jpg" alt="post"/>
+            <img src="img/Use Case/Use Case Diagram - Create post.jpg" alt="post"/>
+            <img src="img/Use Case/Use Case Diagram - Found feed.jpg" alt="post"/>
+            <img src="img/Use Case/Use Case Diagram - Found pet post.jpg" alt="post"/>
+            <img src="img/Use Case/Use Case Diagram - Lost feed.jpg" alt="post"/>
+            <img src="img/Use Case/Use Case Diagram - Lost pet post.jpg" alt="post"/>
+            <img src="img/Use Case/Use Case Diagram - Menu.jpg" alt="post"/>
+            <img src="img/Use Case/Use Case Diagram - Statistics.jpg" alt="post"/>
         </section>
 
         <section id="db">
@@ -75,7 +82,8 @@
                 <b>Accounts: </b> Stocheaza clientii in baza de date.
             </p>
             <p>
-                <b>Profile: </b>Persista profilul userilor. Variabila current_location se va actualiza la fiecare 5 minute pentru a putea
+                <b>Profile: </b>Persista profilul userilor. Variabila current_location se va actualiza la fiecare 5
+                minute pentru a putea
                 implementa actiunea de notificari pe baza locatiei.
             </p>
             <p>
@@ -91,25 +99,13 @@
                 <b>Post: </b> Stocheaza postarile din aplicatie care vor servi mai apoi si generarii statisticilor.
             </p>
             <p>
-                <b>Update: </b> Retine update-urile privitoare la locatia unde a fost vazut ultima data animalul facute de alti useri.
+                <b>Update: </b> Retine update-urile privitoare la locatia unde a fost vazut ultima data animalul facute
+                de alti useri.
             </p>
         </section>
 
-        <section id="func">
-            <h2><span>4. </span>Functionalitatile aplicatiei</h2>
-            <ul>
-                <li><b>Landing page-ul</b> reprezinta pagina principala. Aceasta contine informatii
-                    despre scopul paginii. Vizitatorul paginii poate deveni utilizator completand formularul
-                    de sign up sau in cazul in care are deja cont, se poate loga in aplicatie cu emailul si parola
-                    corespunzatoare.
-                </li>
-                <li><b>Autentificarea</b>           </li>
-                <li></li>
-            </ul>
-        </section>
-
         <section id="mvc">
-            <h2><span>5. </span>Model-View-Controller</h2>
+            <h2><span>4. </span>Model-View-Controller</h2>
             <p>
                 <b>MVC</b> este un design pattern arhitectural care structureaza aplicatia in
                 3 componente logice principale: <ins>model</ins>, <ins>view</ins>, <ins>controller</ins>.
@@ -123,8 +119,8 @@
                 acestora in baza de date.
                 O alta necesitate va fi o clasa ce se va ocupa de preluarea datelor oferite de catre un anunt, precum si
                 informatiile de pe profilul
-                utilizatorului care vor servi generarii de statistici, deciziei de a primi un badge corespunzator
-                implicarii in comunitate,
+                utilizatorului care vor servi generarii de statistici, filtrarii de anunturi dupa locatie, rasa si data
+                disparitiei, recompensa cu un badge corespunzator implicarii in comunitate,
                 updatarea istoricului locatiilor in care animalul a fost vazut.
             </p>
             <p>
@@ -146,15 +142,55 @@
             <div><img src="img/mvc.png" alt="mvc" /></div>
         </section>
 
+        <section id="func">
+            <h2><span>5. </span>Flow-ul aplicatiei</h2>
+            <ul>
+                <li><b>Landing page-ul</b> reprezinta pagina principala. Aceasta contine informatii
+                    despre scopul paginii. Vizitatorul paginii poate deveni utilizator completand formularul
+                    de sign up sau in cazul in care are deja cont, se poate loga in aplicatie cu emailul si parola
+                    corespunzatoare.
+                </li>
+                <li><b>Pagina de creare postare</b> contine un formular cu informatii despre animalul pierdut: nume,
+                    sex, talie,
+                    data disparitiei, rasa, culoare, locatia unde a fost ultima data vazut etc.</li>
+                <li><b>Pagina de feed</b> contine anunturile animalelor pierdute. Permite utilizatorului
+                    filtrarea anunturilor dupa locatie, data disparitiei si rasa. Daca utilizatorul are facut un
+                    anunt, acesta va aparea la inceputul paginii avand posibilitatea de a urmari istoricul locatiilor in
+                    care a mai fost vazut animalul.</li>
+                <li><b>Pagina de profil</b> contine informatiile utilizatorului, datele de contact, precum si o lista cu
+                    animalele pe care le detine si animalele pe care le-a salvat.
+                </li>
+                <li><b>Pagina de statistici</b> contine mai multe chart-uri privind zonele cele mai vulnerabile din
+                    punctul de vedere al
+                    numarului de animale pierdute, range-ul de recompense oferite de catre utilizatori, zonele in care
+                    sunt cei mai activi utilizatori (s-au gasit cele mai multe animale).
+                    Aceasta pagina va contine si un dropdown care va permite utilizatorului sa downloadeze statisticile
+                    in format CSV sau PDF.</li>
+                <li><b>Pagina de contact</b> contine un formular de contact: nume, email, mesaj.
+                </li>
+                <li><b>Pagina de setari</b> contine un formular prin care utilizatorul poate modifica datele personale.
+                </li>
+            </ul>
+        </section>
+
+        <section id="auth">
+            <h2><span>6.</span>Autentificare</h2>
+            <p>
+
+
+
+            </p>
+        </section>
+
         <section id="map">
-            <h2><span>6. </span>Open Street Map</h2>
+            <h2><span>7. </span>Open Street Map</h2>
             <p>
 
             </p>
         </section>
 
         <section id="statistics">
-            <h2><span>7. </span>Statistici</h2>
+            <h2><span>8. </span>Statistici</h2>
             <p>
                 Proiectul va contine o pagina cu statistici facute pe baza aplicatiei, utilizatorul
                 avand posibilitatea si de a le downloada in formatul <b>PDF</b> si <b>CSV</b>.
@@ -171,7 +207,7 @@
             </P>
         </section>
         <section id="tech">
-            <h2><span>8. </span>Tehnologii utilizate</h2>
+            <h2><span>9. </span>Tehnologii utilizate</h2>
             <ul>
                 <li>PHP</li>
                 <li>MySQl</li>
