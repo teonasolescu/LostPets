@@ -161,9 +161,17 @@
         <section id="auth">
             <h2><span>6. </span>Autentificare</h2>
             <p>
-
-
-
+                Pentru a persista utilizatorii logati am ales sa folosim JSON Web Token, standardul care asigura siguranta 
+                transmiterii informatiilor. In momentul in care userul este conectat, fiecare solicitare pe care o va executa 
+                va contine JSON Web Token(JWT) pentru a-i permite sa acceseze servicii si resurse. 
+            </p>
+            <p>
+                JWT e alcatuita din 3 parti: header, payload, signature separate prin punct (".") . Un JWT arata cam asa: 
+                eyJhbGciOiJIUzI1NiIsI6IkpXVCJ9.eyJzdWIiOiIxMjMibmFtZSI6IkpvaG4gRG9lIiwiTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMek6yJV_adQssw5c.
+            </p>
+            <p>
+                In momentul in care userul se logheaza, automat i se va returna un JWT, iar din motive de securitate vom 
+                pastra tokenurile doar 2 ore, pentru a preveni "furtul" JWT-ului.
             </p>
         </section>
 
