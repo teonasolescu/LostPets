@@ -3,6 +3,7 @@ body {
     font-family: 'Segoe UI';
     font-size: 18px;
 }
+
 header{
     text-align: center;
     margin: 0 10%;
@@ -10,6 +11,7 @@ header{
 }
 main{
     display: block;
+    margin: 0 0 5% 0;
 }
 main div{
     margin: 50px 15%;
@@ -20,7 +22,20 @@ main div dl{
 main section{
     margin: 0 15%;
 }
+main section p span{
+    color: #404247;
+    font-size: 30px;
+    font-weight: 900;
+}
 section p{
     margin: 5px 0;
     text-indent: 30px;
+}
+#bd div{
+    text-align: center;
+}
+#statistics p span{
+    font-weight: bold;
+    color: red;
+    font-size: 22px;
 }
