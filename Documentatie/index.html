@@ -28,6 +28,9 @@
                 <li><a href="#map">Open Street Map</a></li>
                 <li><a href="#statistics">Statistici</a>
                 </li>
+                <li>
+                    <a href="tech">Tehnologii utilizate</a>
+                </li>
             </ol>
 
             <dl>
@@ -41,9 +44,10 @@
         <section id="description">
             <h2><span>1. </span>Descrierea proiectului</h2>
             <p>
-                <span>LostPets</span> este o aplicatie Web care vine in ajutorul recuperarii animalelor pierdute de o persoana.
+                <span>LostPets</span> este o aplicatie Web care vine in ajutorul recuperarii animalelor pierdute de o
+                persoana.
                 Utilizatorul va trebui sa se logheze pentru a beneficia de serviciile oferite de aplicatie.
-                Acesta din urma va putea sa isi completeze profilul cu datele personale, precum si animalele pe care 
+                Acesta din urma va putea sa isi completeze profilul cu datele personale, precum si animalele pe care
                 le detine si poate posta un anunt care va contine informatii relevante despre animalul sau
                 pierdut,
                 precum si imagini, locatia unde a fost pierdut si modalitatea de contact (e-mail, nr. de telefon).
@@ -60,7 +64,7 @@
         <section id="use-case">
             <h2><span>2. </span>Use-cases</h2>
             <p>
-                
+
             </p>
         </section>
 
@@ -68,28 +72,54 @@
             <h2><span>3. </span>Baza de date</h2>
             <div><img src="img/bd.png" alt="bd" /></div>
             <p>
-                
+
             </p>
         </section>
 
         <section id="mvc">
             <h2><span>4. </span>Model-View-Controller</h2>
             <p>
-                
+                <b>MVC</b> este un design pattern arhitectural care structureaza aplicatia in
+                3 componente logice principale: <ins>model</ins>, <ins>view</ins>, <ins>controller</ins>.
+                Fiecare din aceste componente sunt construite pentru a servi unui aspect specific al aplicatiei:
+                UI, business si intrarile utilizatorului.
             </p>
+            <p>
+                <b>Model</b> reprezinta datele transferate intre View si Controller si corespunde informatiilor logice ale utilizatorilor.
+                Se va implementa o clasa sa obtina informatiile unui utilizator la crearea contului si persistarea acestora in baza de date.
+                O alta necesitate va fi o clasa ce se va ocupa de preluarea datelor oferite de catre un anunt, precum si informatiile de pe profilul
+                utilizatorului care vor servi generarii de statistici, deciziei de a primi un badge corespunzator implicarii in comunitate, 
+                updatarea istoricului locatiilor in care animalul a fost vazut.
+            </p>
+            <p>
+                <b>View</b> este utilizat pentru partea de UI a aplicatiei, interfata propriu-zisa cu care utilizatorul
+                interactioneaza si consta in textareas, dropdowns, checkbox-uri etc.
+            </p>
+            <p>
+                <b>Controller</b> este "creierul" aplicatiei, are rolul de intermediar intre Model si View. Acesta preia datele definite de Model
+                si le manipuleaza, outputul fiind redirectat View-ului pentru a fi disponibil utilizatorului:
+                formularul de login, respectiv de sign in, editarea profilului cu informatii despre sine 
+                si adaugarea animalelor pe care le detine, postarea unui anunt.
+            </p>
+            <p>
+                Avantajele acestui design pattern este faptul ca asigura modularitatea si scalabilitatea aplicatiei,
+                reduce complexitatea aplicatiei si ofera suport pentru lucrul in echipa.
+
+            </p>
+            <div><img src="img/mvc.png" alt="mvc" /></div>
         </section>
 
         <section id="autentificare">
             <h2><span>5. </span>Autentificare</h2>
             <p>
-                
+
             </p>
         </section>
 
         <section id="map">
             <h2><span>6. </span>Open Street Map</h2>
             <p>
-                
+
             </p>
         </section>
 
@@ -103,10 +133,22 @@
             </p>
             <P>
                 Statisticile vor oferi informatii privind zonele cele mai vulnerabile in care s-au pierdut
-                cele mai multe animale (bazata pe locatia unei postari), precum si zonele in care sunt cei mai activi utilizatori,
-                sunt salvate cele mai multe animale, range-ul recompenselor oferite de catre utilizatori pentru recuperarea
+                cele mai multe animale (bazata pe locatia unei postari), precum si zonele in care sunt cei mai activi
+                utilizatori,
+                sunt salvate cele mai multe animale, range-ul recompenselor oferite de catre utilizatori pentru
+                recuperarea
                 animalului pierdut (bazata pe suma din cadrul fiecarui anunt de disparitie).
             </P>
+        </section>
+        <section id="tech">
+            <h2><span>5.</span>Tehnologii utilizate</h2>
+            <ul>
+                <li>PHP</li>
+                <li>MySQl</li>
+                <li>Folosim pachetul Xampp care conține serverul Apache</li>
+                <li>vom exporta statisticile în CSV și PDF</li>
+                <li>HTML, JavaScript și CSS pentru partea de front-end</li>
+            </ul>
         </section>
     </main>
 </body>
