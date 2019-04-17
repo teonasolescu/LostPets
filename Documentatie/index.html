@@ -185,7 +185,35 @@
         <section id="map">
             <h2><span>8. </span>Open Street Map</h2>
             <p>
+Vom folosi OpenLayers,  o implementare open-source a interfetei "Slippy Map". Aceasta este o librarie JS care permite integrarea unui Slippy Map prin folosirea tile-urilor.
+De exemplu, Google Maps foloseste API-ul de la Google Maps pentru a integra un OSM.
 
+
+<pre><html><body>
+  <div id="mapdiv"></div>
+  <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+  <script>
+    map = new OpenLayers.Map("mapdiv");
+    map.addLayer(new OpenLayers.Layer.OSM());
+
+    var lonLat = new OpenLayers.LonLat( -0.1279688 ,51.5077286 )
+          .transform(
+            new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+            map.getProjectionObject() // to Spherical Mercator Projection
+          );
+          
+    var zoom=16;
+
+    var markers = new OpenLayers.Layer.Markers( "Markers" );
+    map.addLayer(markers);
+    
+    markers.addMarker(new OpenLayers.Marker(lonLat));
+    
+    map.setCenter (lonLat, zoom);
+  </script>
+</body></html></pre>
+
+Mai sus este un exemplu de deschidere a unei harti careia i se aplica un marcator static. Pentru fiecare postare se va face o noua harta pe care se vor adauga marcatori pentru fiecare localizare a animalului - atat a stapanului, cat si pentru comentariile adaugate ulterior.
             </p>
         </section>
 
