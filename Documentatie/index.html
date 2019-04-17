@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html  lang="ro">
+<html lang="ro">
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
@@ -64,15 +64,15 @@
 
         <section id="use-case">
             <h2><span>2. </span>Use-cases</h2>
-            <img src="img/Use_Case/Use_Case_Diagram_Landing_page.jpg" alt="post"/>
-            <img src="img/Use_Case/Use_Case_Diagram_Profile.jpg" alt="post"/>
-            <img src="img/Use_Case/Use_Case_Diagram_Create_post.jpg" alt="post"/>
-            <img src="img/Use_Case/Use_Case_Diagram_Found_feed.jpg" alt="post"/>
-            <img src="img/Use_Case/Use_Case_Diagram_Found_pet_post.jpg" alt="post"/>
-            <img src="img/Use_Case/Use_Case_Diagram_Lost_feed.jpg" alt="post"/>
-            <img src="img/Use_Case/Use_Case_Diagram_Lost_pet_post.jpg" alt="post"/>
-            <img src="img/Use_Case/Use_Case_Diagram_Menu.jpg" alt="post"/>
-            <img src="img/Use_Case/Use_Case_Diagram_Statistics.jpg" alt="post"/>
+            <img src="img/Use_Case/Use_Case_Diagram_Landing_page.jpg" alt="post" />
+            <img src="img/Use_Case/Use_Case_Diagram_Profile.jpg" alt="post" />
+            <img src="img/Use_Case/Use_Case_Diagram_Create_post.jpg" alt="post" />
+            <img src="img/Use_Case/Use_Case_Diagram_Found_feed.jpg" alt="post" />
+            <img src="img/Use_Case/Use_Case_Diagram_Found_pet_post.jpg" alt="post" />
+            <img src="img/Use_Case/Use_Case_Diagram_Lost_feed.jpg" alt="post" />
+            <img src="img/Use_Case/Use_Case_Diagram_Lost_pet_post.jpg" alt="post" />
+            <img src="img/Use_Case/Use_Case_Diagram_Menu.jpg" alt="post" />
+            <img src="img/Use_Case/Use_Case_Diagram_Statistics.jpg" alt="post" />
         </section>
 
         <section id="db">
@@ -80,12 +80,15 @@
             <div><img src="img/bd.png" alt="bd" /></div>
             <ul>
                 <li><b>Accounts: </b> Stocheaza clientii in baza de date.</li>
-                <li><b>Profile: </b>Persista profilul userilor. Variabila current_location se va actualiza la fiecare 5 minute pentru a putea implementa actiunea de notificari pe baza locatiei.</li>
+                <li><b>Profile: </b>Persista profilul userilor. Variabila current_location se va actualiza la fiecare 5
+                    minute pentru a putea implementa actiunea de notificari pe baza locatiei.</li>
                 <li><b>Personal_badges: </b> Retine badge-urile acordate userilor.</li>
                 <li><b>Bedges: </b> Contine toate badge-urile care se pot acorda.</li>
                 <li><b>Pets: </b> Stocheaza animalele inregistrate. Un animal poate apartine unui singur user.</li>
-                <li><b>Post: </b> Stocheaza postarile din aplicatie care vor servi mai apoi si generarii statisticilor.</li>
-                <li><b>Update: </b> Retine update-urile privitoare la locatia unde a fost vazut ultima data animalul facute de alti useri.</li>
+                <li><b>Post: </b> Stocheaza postarile din aplicatie care vor servi mai apoi si generarii statisticilor.
+                </li>
+                <li><b>Update: </b> Retine update-urile privitoare la locatia unde a fost vazut ultima data animalul
+                    facute de alti useri.</li>
             </ul>
         </section>
 
@@ -168,16 +171,19 @@
         <section id="auth">
             <h2><span>7. </span>Autentificare</h2>
             <p>
-                Pentru a persista utilizatorii logati am ales sa folosim <b>JSON Web Token</b>, standardul care asigura siguranta 
-                transmiterii informatiilor. In momentul in care userul este conectat, fiecare solicitare pe care o va executa 
-                va contine JSON Web Token(JWT) pentru a-i permite sa acceseze servicii si resurse. 
+                Pentru a persista utilizatorii logati am ales sa folosim <b>JSON Web Token</b>, standardul care asigura
+                siguranta
+                transmiterii informatiilor. In momentul in care userul este conectat, fiecare solicitare pe care o va
+                executa
+                va contine JSON Web Token(JWT) pentru a-i permite sa acceseze servicii si resurse.
             </p>
             <p>
-                JWT e alcatuita din 3 parti: header, payload, signature separate prin punct (".") . Un JWT arata cam asa: 
+                JWT e alcatuita din 3 parti: header, payload, signature separate prin punct (".") . Un JWT arata cam
+                asa:
                 eyJhbGciOiJIUzI1NiIsI6IkpXVCJ9.eyJzdWIiOiIxMjMibmFtZSI6IkpvaG4gRG9lIiwiTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMek6yJV_adQssw5c.
             </p>
             <p>
-                In momentul in care userul se logheaza, automat i se va returna un JWT, iar din motive de securitate vom 
+                In momentul in care userul se logheaza, automat i se va returna un JWT, iar din motive de securitate vom
                 pastra tokenurile doar 2 ore, pentru a preveni "furtul" JWT-ului.
             </p>
         </section>
@@ -185,35 +191,44 @@
         <section id="map">
             <h2><span>8. </span>Open Street Map</h2>
             <p>
-Vom folosi OpenLayers,  o implementare open-source a interfetei "Slippy Map". Aceasta este o librarie JS care permite integrarea unui Slippy Map prin folosirea tile-urilor.
-De exemplu, Google Maps foloseste API-ul de la Google Maps pentru a integra un OSM.
+                Vom folosi OpenLayers, o implementare open-source a interfetei "Slippy Map". Aceasta este o librarie JS
+                care permite integrarea unui Slippy Map prin folosirea tile-urilor.
+                De exemplu, Google Maps foloseste API-ul de la Google Maps pentru a integra un OSM.
 
 
-<pre><html><body>
-  <div id="mapdiv"></div>
-  <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
-  <script>
-    map = new OpenLayers.Map("mapdiv");
-    map.addLayer(new OpenLayers.Layer.OSM());
+                <xmp>
+                    <html>
 
-    var lonLat = new OpenLayers.LonLat( -0.1279688 ,51.5077286 )
-          .transform(
-            new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
-            map.getProjectionObject() // to Spherical Mercator Projection
-          );
-          
-    var zoom=16;
+                    <body>
+                        <div id="mapdiv"></div>
+                        <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+                        <script>
+                            map = new OpenLayers.Map("mapdiv");
+                            map.addLayer(new OpenLayers.Layer.OSM());
 
-    var markers = new OpenLayers.Layer.Markers( "Markers" );
-    map.addLayer(markers);
-    
-    markers.addMarker(new OpenLayers.Marker(lonLat));
-    
-    map.setCenter (lonLat, zoom);
-  </script>
-</body></html></pre>
+                            var lonLat = new OpenLayers.LonLat(-0.1279688, 51.5077286)
+                                .transform(
+                                    new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+                                    map.getProjectionObject() // to Spherical Mercator Projection
+                                );
 
-Mai sus este un exemplu de deschidere a unei harti careia i se aplica un marcator static. Pentru fiecare postare se va face o noua harta pe care se vor adauga marcatori pentru fiecare localizare a animalului - atat a stapanului, cat si pentru comentariile adaugate ulterior.
+                            var zoom = 16;
+
+                            var markers = new OpenLayers.Layer.Markers("Markers");
+                            map.addLayer(markers);
+
+                            markers.addMarker(new OpenLayers.Marker(lonLat));
+
+                            map.setCenter(lonLat, zoom);
+                        </script>
+                    </body>
+
+                    </html>
+                </xmp>
+
+                Mai sus este un exemplu de deschidere a unei harti careia i se aplica un marcator static. Pentru fiecare
+                postare se va face o noua harta pe care se vor adauga marcatori pentru fiecare localizare a animalului -
+                atat a stapanului, cat si pentru comentariile adaugate ulterior.
             </p>
         </section>
 
