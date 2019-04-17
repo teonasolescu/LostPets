@@ -42,3 +42,11 @@ section p{
 #func ul{
     list-style-type: square;
 }
+#c4 #component{
+    text-align: center;
+    margin: 0 0 50px 50px;
+}
+
+#c4 #component img{
+    width: 1200px;
+}
