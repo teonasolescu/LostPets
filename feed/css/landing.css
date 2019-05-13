@@ -114,20 +114,19 @@ header{
 
 .description h2, .description h4{
     margin: 0;
-    margin-bottom: 10px;
+    margin-bottom: 40px;
 }
 
-
-.description button{
+.description a{
     background: #FFAD00;
-    border: none;
     border-radius: 12px;
     color: white;
+    text-align: center;
     font-size: 18px;
     font-weight: normal;
     padding: 16px 90px;
-    margin-top: 60px;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .full-width{
@@ -266,4 +265,71 @@ header{
     color: white;
 }
 
+/* RESPONSIVE */
+@media all and (max-width: 1000px){    
+    .description a{
+        display: block;
+    }
+}
 
+@media all and (max-width: 800px) {
+    header .image img,
+    .full-width .image img,
+    .steps img{
+        max-width: 300px;
+    }
+}
+
+@media all and (max-width: 600px) {
+    header .image img,
+    .full-width .image img,
+    .steps img{
+        display: none;
+    }
+    
+    nav{
+        display: block;
+        text-align: center;
+    }
+
+    nav #menu{
+        display: inline-block;
+        margin-bottom: 5px;
+        margin-top: 5px;
+    }
+        
+    #signup{
+        border-radius: 8px;
+        padding: 8px 30px 8px 30px;
+    }
+
+    #signin{
+        border-radius: 8px;
+        padding: 8px 30px 8px 30px;
+    }
+        
+    h2{
+        font-size:30px;
+    }
+
+    h3{
+        font-size:24px;
+    }
+
+    h4{
+        font-size:20px;
+    }
+
+    p{
+        font-size:18px;
+    }
+    
+    .description a{
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 12px 50px;
+        margin-top: 30px;
+        display: block;
+    }
+}

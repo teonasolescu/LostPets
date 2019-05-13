@@ -11,7 +11,7 @@ footer .footer-limiter h1 a {
     text-decoration: none;
 }
 
-footer .footer-limiter .description h1 a span {
+footer .footer-limiter .footer-description h1 a span {
     color: #404247;
     font-size: 30px;
     font-weight: 900;
@@ -64,23 +64,34 @@ footer .footer-limiter .contact ul, footer .footer-limiter .share ul {
     padding: 0;
 }
 
-footer .footer-limiter .description {
+footer .footer-limiter .footer-description {
     height: auto;
     display: inline-block;
 }
-footer .footer-limiter .description h1{
+footer .footer-limiter .footer-description h1{
     margin-bottom: 20px;
     transform: translate(0, -15px);
 }
-footer .footer-limiter .description h1 a span {
+footer .footer-limiter .footer-description h1 a span {
     margin-right: 50px;
 }
 
-footer .footer-limiter .description p {
+footer .footer-limiter .footer-description h1 a:hover span{
+    color: white;
+}
+
+footer .footer-limiter .footer-description p {
     width: 700px;
     height: 105px;
     color: #404247;
     margin : 0;
+}
+
+footer .footer-limiter .contact ul li{
+    font-weight: 700;
+}
+footer .footer-limiter .contact ul li a:hover{
+    color: white;
 }
 
 /*RESPONSIVE */
@@ -114,7 +125,7 @@ footer .footer-limiter .description p {
     footer .footer-limiter {
         text-align: center;
     }
-    footer .footer-limiter .description {
+    footer .footer-limiter .footer-description {
         display: none;
     }
 }
