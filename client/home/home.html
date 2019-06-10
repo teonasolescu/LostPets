@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Home</title>
+        <link rel="stylesheet" type="text/css" href="headerfooter.css">
+        <link rel="stylesheet" type="text/css" href="meniu.css">
+        <link rel="stylesheet" type="text/css" href="profile.css">
+    </head>
+
+    <body>
+
+        <header>
+            <div class="header-limiter">
+                <h1><a href="#"><span>LostPets</span></a></h1>
+
+                <nav>
+                    <a href="#"><span>Found pets</span></a>
+                    <a href="#"><span>Missing pets</span></a>
+                </nav>
+
+                <div>
+                    <button id="add" type="button"> <img src="icons/add.svg" alt="add post" /></button>
+                    <button id="profile" type="button"> <img src="icons/profile.jpg" alt="avatar" /></button>
+                </div>
+            </div>
+        </header>
+
+        <div>
+            <aside class="menu">
+                <div class="lista">
+                    <p>Menu</p>
+
+                    <ul>
+                        <li><a href=""><b>Notificari</b></a></li>
+                        <li><a href=""><b>Setari</b></a></li>
+                        <li><a href=""><b>Deconectare</b></a></li>
+                        <li class="spsp"><a href="#"><b>Exit</b></a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+
+        <script>
+            let profile = document.getElementById('profile');
+            let menu = document.querySelector('.menu');
+
+            profile.addEventListener('click', () => {
+                menu.classList.add('is--open');
+            });
+
+            document.addEventListener('keyup', (e) => {
+                if (e.key === 'Escape' || e.keyCode === 27) {
+                    menu.classList.remove('is--open');
+                }
+            })
+        </script>
+
+        <div class="placeholder">
+            <div class="limiter">
+                <section class="profile">
+                    <div class="profile-card">
+                        <div class="person">
+                            <img class="avatar" id="myPhoto"
+                                src="https://t4.ftcdn.net/jpg/02/15/84/43/240_F_215844325_ttX9YiIIyeaR7Ne6EaLLjMAmy4GvPC69.jpg"
+                                alt="avatar" />
+                            <h4 id="myName"></h4>
+                        </div>
+                        <div class="profile-field">
+                            <img alt="Profile Icon" src="icons/phone.svg">
+                            <div>
+                                <h5>Phone number:</h5>
+                                <p id="myNumber"></p>
+                            </div>
+                        </div>
+                        <div class="profile-field">
+                            <img alt="Profile Icon" src="icons/@.svg">
+                            <div>
+                                <h5>Email:</h5>
+                                <p id="myEmail"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="badges">
+                        <img style="display: none" id="lev1" alt="Profile Icon" src="icons/dog.svg">
+                        <img style="display: none" id="lev2" alt="Profile Icon" src="icons/cat.svg">
+                        <img style="display: none" id="lev3" alt="Profile Icon" src="icons/dog-training.svg">
+                    </div>
+                </section>
+
+                <section class="pets">
+                    <div class="pet-card">
+                        <img alt="Pet's photo" src="icons/corgi.jpg">
+                        <div class="pets-name"><img alt="Gender" src="icons/gender-boy.svg">
+                            <h4>Boy</h4>
+                        </div>
+                        <div class="trait">
+                            <h5>Breed: </h5>
+                            <p>Poodle - Cocker Spaniel</p>
+                        </div>
+                        <div class="trait">
+                            <h5>Color: </h5>
+                            <p>Brown - White</p>
+                        </div>
+                        <div class="trait">
+                            <h5>Height: </h5>
+                            <p>Medium - Tall</p>
+                        </div>
+                        <div class="trait">
+                            <h5>Age: </h5>
+                            <p>3 years</p>
+                        </div>
+                        <div class="trait">
+                            <h5>Collar: </h5>
+                            <p>Pink with flowers on it</p>
+                        </div>
+                        <div class="trait">
+                            <h5>About it:</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus eros augue, quis
+                                dapibus
+                                felis egestas sit amet. Aenean purus tortor, vulputate in urna at, auctor tincidunt
+                                tortor.
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="pet-card">
+                        <img alt="Pet's photo" src="icons/lab2.jpg">
+                        <div class="pets-name"><img alt="Gender" src="icons/gender-girl.svg">
+                            <h4>Boy</h4>
+                        </div>
+                        <div class="trait">
+                            <h5>Breed: </h5>
+                            <p>Poodle - Cocker Spaniel</p>
+                        </div>
+                        <div class="trait">
+                            <h5>Color: </h5>
+                            <p>Brown - White</p>
+                        </div>
+                        <div class="trait">
+                            <h5>Height: </h5>
+                            <p>Medium - Tall</p>
+                        </div>
+                        <div class="trait">
+                            <h5>Age: </h5>
+                            <p>3 years</p>
+                        </div>
+                        <div class="trait">
+                            <h5>Collar: </h5>
+                            <p>Pink with flowers on it</p>
+                        </div>
+                        <div class="trait">
+                            <h5>About it:</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus eros augue, quis
+                                dapibus
+                                felis egestas sit amet. Aenean purus tortor, vulputate in urna at, auctor tincidunt
+                                tortor.
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="pet-card">
+                        <img alt="Pet's photo" src="icons/doggo.jpg">
+                        <div class="pets-name"><img alt="Gender" src="icons/gender-boy.svg">
+                            <h4>Boy</h4>
+                        </div>
+                        <div class="trait">
+                            <h5>Breed: </h5>
+                            <p>Poodle - Cocker Spaniel</p>
+                        </div>
+                        <div class="trait">
+                            <h5>Color: </h5>
+                            <p>Brown - White</p>
+                        </div>
+                        <div class="trait">
+                            <h5>Height: </h5>
+                            <p>Medium - Tall</p>
+                        </div>
+                        <div class="trait">
+                            <h5>Age: </h5>
+                            <p>3 years</p>
+                        </div>
+                        <div class="trait">
+                            <h5>Collar: </h5>
+                            <p>Pink with flowers on it</p>
+                        </div>
+                        <div class="trait">
+                            <h5>About it:</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus eros augue, quis
+                                dapibus
+                                felis egestas sit amet. Aenean purus tortor, vulputate in urna at, auctor tincidunt
+                                tortor.
+                            </p>
+                        </div>
+
+                    </div>
+                </section>
+            </div>
+        </div>
+
+
+        <h3>Found pets</h3>
+        <section class="found-pets">
+
+            <div class="pet-card">
+                <img alt="Pet's photo" src="icons/doggo.jpg">
+                <div class="pets-name"><img alt="Gender" src="icons/gender-boy.svg">
+                    <h4>Boy</h4>
+                </div>
+
+                <div class="profile-field">
+                    <img alt="Profile Icon" src="icons/calendar.svg">
+                    <p>12/03/2018</p>
+                </div>
+                <div class="profile-field">
+                    <img alt="Profile Icon" src="icons/location.svg">
+                    <p>Lascar Catargi, Iasi, Romania</p>
+                </div>
+            </div>
+            <div class="pet-card">
+                <img alt="Pet's photo" src="icons/doggo.jpg">
+                <div class="pets-name"><img alt="Gender" src="icons/gender-boy.svg">
+                    <h4>Boy</h4>
+                </div>
+
+                <div class="profile-field">
+                    <img alt="Profile Icon" src="icons/calendar.svg">
+                    <p>12/03/2018</p>
+                </div>
+                <div class="profile-field">
+                    <img alt="Profile Icon" src="icons/location.svg">
+                    <p>Lascar Catargi, Iasi, Romania</p>
+                </div>
+            </div>
+            <div class="pet-card">
+                <img alt="Pet's photo" src="icons/doggo.jpg">
+                <div class="pets-name"><img alt="Gender" src="icons/gender-boy.svg">
+                    <h4>Boy</h4>
+                </div>
+
+                <div class="profile-field">
+                    <img alt="Profile Icon" src="icons/calendar.svg">
+                    <p>12/03/2018</p>
+                </div>
+                <div class="profile-field">
+                    <img alt="Profile Icon" src="icons/location.svg">
+                    <p>Lascar Catargi, Iasi, Romania</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-limiter">
+                <div class="description">
+                    <h1><a href="#"><span>LostPets</span></a></h1>
+                    <p>Working together regionally to provide and sustain a safe, secure and healthy community.
+                        If you've lost or found an animal, the resources on this page can help reunite the pet with its
+                        owner.
+                    </p>
+                </div>
+                <div class="contact">
+                    <ul>
+                        <li>Your profile</li>
+                        <li>Statistics</li>
+                        <li>Contact</li>
+                        <li>Settings</li>
+                    </ul>
+                </div>
+                <div class="share">
+                    <ul>
+                        <li><a href="https://www.facebook.com" target="_blank"><img src="icons/facebook.svg"
+                                    alt="facebook" /></a>
+                        </li>
+                        <li><a href="https://www.instagram.com" target="_blank"><img src="icons/instagram.svg"
+                                    alt="instagram" /></a></li>
+                        <li><a href="https://twitter.com" target="_blank"><img src="icons/twitter.svg"
+                                    alt="twitter" /></a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+
+        <script src="../utils/authCheck.js"></script>
+        <script src="./main.js"></script>
+    </body>
+
+</html>

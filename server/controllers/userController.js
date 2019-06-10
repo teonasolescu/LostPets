@@ -5,7 +5,7 @@ const processBody = req =>
     new Promise(resolve => {
         let body = "";
 
-        req.on("data", function(data) {
+        req.on("data", function (data) {
             body += data;
 
             // Too much POST data, kill the connection!
@@ -13,7 +13,7 @@ const processBody = req =>
             if (body.length > 1e6) req.connection.destroy();
         });
 
-        req.on("end", function() {
+        req.on("end", function () {
             resolve(JSON.parse(body));
         });
     });
@@ -21,6 +21,78 @@ const processBody = req =>
 const getUsers = async (req, res, db, headers) => {
     res.writeHead(200, headers);
     res.end(JSON.stringify([]));
+};
+
+const getUser = async (req, res, db, headers) => {
+    try {
+        const token = req.url.split("user=")[1];
+        const user = await db.collection("users").findOne({ tokens: token });
+
+        delete user.password;
+        delete user.tokens;
+
+        res.writeHead(200, headers);
+        return res.end(
+            JSON.stringify({
+                success: true,
+                user
+            })
+        );
+    } catch (error) {
+        res.writeHead(500, headers);
+        return res.end(
+            JSON.stringify({
+                success: false,
+                message: "Something bad happen!"
+            })
+        );
+    }
+};
+
+const changeUser = async (req, res, db, headers) => {
+    try {
+        const body = await processBody(req);
+        const token = req.url.split("user=")[1];
+
+        if (body.email) {
+            const existingUser = await db
+                .collection("users")
+                .findOne({ email: body.email });
+
+            if (existingUser && !existingUser.tokens.includes(token)) {
+                res.writeHead(409, headers);
+                return res.end(
+                    JSON.stringify({
+                        success: false,
+                        message: "An user with this email already exists."
+                    })
+                );
+            }
+        }
+
+        await db.collection("users").updateOne(
+            { tokens: token },
+            {
+                $set: body
+            },
+            { upsert: true }
+        );
+
+        res.writeHead(200, headers);
+        return res.end(
+            JSON.stringify({
+                success: true
+            })
+        );
+    } catch (error) {
+        res.writeHead(500, headers);
+        return res.end(
+            JSON.stringify({
+                success: false,
+                message: "Something bad happen!"
+            })
+        );
+    }
 };
 
 const loginUser = async (req, res, db, headers) => {
@@ -127,5 +199,7 @@ const createUser = async (req, res, db, headers) => {
 module.exports = {
     getUsers,
     createUser,
-    loginUser
+    loginUser,
+    getUser,
+    changeUser
 };
