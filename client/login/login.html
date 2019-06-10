@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="login-popup.css">
+  </head>
+
+  <body>
+    <form class="modal-content animate" id="form">
+      <div class="stg">
+        <h1 class="wbmesaj">Welcome back!</h1>
+        <div class="marg">
+          <label for="email"><b>Email</b></label>
+          <input type="email" id="email" name="email" style="width:100%;height:23px;" required>
+        </div>
+        <div class="marg">
+          <label for="psw"><b>Password</b></label>
+          <input type="password" id="psw" name="psw" style="width:100%;height:23px;" minlength="6" required>
+        </div>
+        <br>
+
+        <button type="submit" class="login_button"><b>Login</b></button>
+
+        <div class="marg">
+          <div style="display:inline-block;">
+            <a href="/client/register/register.html"><span>Not a member yet?</span></a>
+          </div>
+
+          <div style="display:inline-block;">
+            <a href="#"><span>Forgot your password?</span></a>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="avatar">
+        <img src="login.svg" alt="Avatar"> <!-- style="margin-left:0px;" -->
+      </div>
+    </form>
+
+    <script src="../utils/isAuth.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/hmac.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/sha1.min.js"></script>
+    <script src="./main.js"></script>
+  </body>
+
+</html>
