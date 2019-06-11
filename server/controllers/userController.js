@@ -1,5 +1,9 @@
 const uuid = require("uuid/v4");
 
+const Busboy = require('busboy');
+const crypto = require("crypto-js");
+const fs = require("fs");
+
 //proceseaza date de la client la server
 const processBody = req =>
     new Promise(resolve => {
@@ -26,7 +30,11 @@ const getUsers = async (req, res, db, headers) => {
 const getUser = async (req, res, db, headers) => {
     try {
         const token = req.url.split("user=")[1];
-        const user = await db.collection("users").findOne({ tokens: token });
+        const user = await db
+            .collection("users")
+            .findOne({ 
+            tokens: token 
+        });
 
         delete user.password;
         delete user.tokens;
@@ -43,11 +51,65 @@ const getUser = async (req, res, db, headers) => {
         return res.end(
             JSON.stringify({
                 success: false,
-                message: "Something bad happen!"
+                message: "Something bad happened!"
             })
         );
     }
 };
+
+const changeUserPhoto = async (req, res, db, headers) => {
+    try {
+        const token = req.url.split("user=")[1];
+
+        const user = await db.collection("users").findOne({
+            tokens: token
+        });
+
+        const busboy = new Busboy({
+            headers: req.headers
+        });
+        let filePath;
+
+        busboy.on('file', function (fieldname, file, filename, encoding, mimetype) {
+            const type = mimetype.split('/')[1];
+
+            filePath = '/public/' + crypto.SHA512(new Date().toString()).toString() + `.${type}`;
+            const saveTo = __dirname + '/../../client' + filePath;
+
+            file.pipe(fs.createWriteStream(saveTo));
+        });
+
+        busboy.on('finish', async () => {
+            await db.collection("users").updateOne({
+                email: user.email
+            }, {
+                $set: {
+                    profilePhoto: `/client${filePath}`
+                }
+            }, {
+                upsert: true
+            });
+
+            res.writeHead(200, headers);
+            return res.end(
+                JSON.stringify({
+                    success: true,
+                    photo: `/client${filePath}`
+                })
+            );
+        });
+
+        req.pipe(busboy);
+    } catch (error) {
+        res.writeHead(500, headers);
+        return res.end(
+            JSON.stringify({
+                success: false,
+                message: "Something bad happened!"
+            })
+        );
+    }
+}
 
 const changeUser = async (req, res, db, headers) => {
     try {
@@ -57,7 +119,9 @@ const changeUser = async (req, res, db, headers) => {
         if (body.email) {
             const existingUser = await db
                 .collection("users")
-                .findOne({ email: body.email });
+                .findOne({ 
+                    email: body.email 
+                });
 
             if (existingUser && !existingUser.tokens.includes(token)) {
                 res.writeHead(409, headers);
@@ -69,6 +133,8 @@ const changeUser = async (req, res, db, headers) => {
                 );
             }
         }
+
+        body.currentLocation = [47.151726, 27.587914];
 
         await db.collection("users").updateOne(
             { tokens: token },
@@ -89,7 +155,7 @@ const changeUser = async (req, res, db, headers) => {
         return res.end(
             JSON.stringify({
                 success: false,
-                message: "Something bad happen!"
+                message: "Something bad happened!"
             })
         );
     }
@@ -101,7 +167,9 @@ const loginUser = async (req, res, db, headers) => {
 
         const existingUser = await db
             .collection("users")
-            .findOne({ email: body.email, password: body.password });
+            .findOne({ 
+                email: body.email, 
+                password: body.password });
 
         if (!existingUser) {
             res.writeHead(404, headers);
@@ -143,7 +211,7 @@ const loginUser = async (req, res, db, headers) => {
         return res.end(
             JSON.stringify({
                 success: false,
-                message: "Something bad happen!"
+                message: "Something bad happened!"
             })
         );
     }
@@ -171,6 +239,7 @@ const createUser = async (req, res, db, headers) => {
             body.profilePhoto =
                 "https://t4.ftcdn.net/jpg/02/15/84/43/240_F_215844325_ttX9YiIIyeaR7Ne6EaLLjMAmy4GvPC69.jpg";
             body.nrFounds = 0;
+            body.currentLocation = [47.151726, 27.587914];
 
             const user = await db.collection("users").insertOne(body);
             delete user.ops[0].password;
@@ -190,7 +259,7 @@ const createUser = async (req, res, db, headers) => {
         return res.end(
             JSON.stringify({
                 success: false,
-                message: "Something bad happen!"
+                message: "Something bad happened!"
             })
         );
     }
@@ -201,5 +270,6 @@ module.exports = {
     createUser,
     loginUser,
     getUser,
-    changeUser
+    changeUser,
+    changeUserPhoto
 };

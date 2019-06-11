@@ -2,7 +2,10 @@ require("dotenv").config();
 const http = require("http");
 const MongoClient = require("mongodb").MongoClient;
 
-const { users } = require("./routes");
+const { 
+    users,
+    posts
+} = require("./routes");
 
 http.createServer(async (req, res) => {
     try {

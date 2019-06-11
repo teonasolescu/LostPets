@@ -1,0 +1,243 @@
+body {
+    font-family: 'Segoe UI';
+    margin: 0;
+}
+
+/* HEADER */
+
+header {
+    border-bottom: 1px solid #CFCFCF;
+    padding: 20px 40px;
+    height: 120px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+header .header-limiter {
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header button, footer button {
+    border: none;
+    background: none;
+}
+
+header .header-limiter h1, footer .footer-limiter h1 {
+    float: left;
+}
+
+header .header-limiter h1 a, footer .footer-limiter h1 a {
+    text-decoration: none;
+}
+
+header .header-limiter h1 a span, footer .footer-limiter .description h1 a span {
+    color: #404247;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+header .header-limiter #profile img {
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    border: 2px solid #CFCFCF;
+}
+
+header .header-limiter nav a {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 25px;
+    color: #404247;
+    margin-left: 20px;
+}
+
+header .header-limiter #profile {
+    vertical-align: middle;
+    margin-left: 20px;
+}
+
+header .header-limiter #add {
+    vertical-align: middle;
+}
+
+header .header-limiter #add img {
+    height: 30px;
+    width: 30px;
+}
+
+.header-fixed-placeholder {
+    height: 150px;
+    display: none;
+}
+
+/* FOOTER*/
+
+footer {
+    border: none;
+    padding: 20px 40px;
+    height: 170px;
+    width: 100%;
+    box-sizing: border-box;
+    left: 0;
+    background-color: #F7F7FB;
+}
+
+footer .footer-limiter {
+    max-width: 1600px;
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+footer .footer-limiter .contact{
+    transform: translate(0, -15px);
+}
+footer .footer-limiter .contact, footer .footer-limiter .share {
+    width: 250px;
+}
+
+footer .footer-limiter .share{
+    transform: translate(0, -22px);
+}
+footer .footer-limiter .share ul li {
+    display: inline-block;
+}
+
+footer .footer-limiter .share ul li a {
+    text-decoration: none;
+}
+
+footer .footer-limiter .contact ul, footer .footer-limiter .share ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+footer .footer-limiter .description {
+    height: auto;
+    display: inline-block;
+}
+footer .footer-limiter .description h1{
+    margin: 0;
+    transform: translate(0, -15px);
+}
+footer .footer-limiter .description h1 a span {
+    margin-right: 50px;
+}
+
+footer .footer-limiter .description p {
+    width: 700px;
+    height: 105px;
+    color: #404247;
+    margin : 0;
+}
+
+/*RESPONSIVE */
+
+@media all and (max-width: 1000px) {
+    header{
+        height: 160px;
+    }
+    header .header-limiter {
+        display: block;
+        text-align: center;
+    }
+    header .header-limiter h1 {
+        float: none;
+        margin: 0;
+    }
+    header .header-limiter h1 a span {
+        font-size: 25px;
+    }
+    header .header-limiter nav a {
+        font-size: 20px;
+    }
+    header .header-limiter div #profile img {
+        width: 50px;
+        height: 50px;
+    }
+    header .header-limiter div #add img {
+        width: 30px;
+        height: 30px;
+    }
+    footer {
+        height: 270px;
+    }
+    footer .footer-limiter {
+        display: block;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+    }
+    footer .footer-limiter .contact {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    footer .footer-limiter .contact ul li {
+        display: inline;
+        padding-left: 10px;
+    }
+}
+
+@media all and (max-width: 600px) {
+    header .header-limiter {
+        display: block;
+        text-align: center;
+    }
+    header .header-limiter h1 {
+        float: none;
+        margin: 0;
+    }
+    header .header-limiter h1 a span {
+        font-size: 20px;
+    }
+    header .header-limiter nav a {
+        font-size: 15px;
+    }
+    header .header-limiter div #profile img {
+        width: 50px;
+        height: 50px;
+    }
+    header .header-limiter div #add img {
+        width: 30px;
+        height: 30px;
+    }
+    footer {
+        height: 150px;
+    }
+    footer .footer-limiter {
+        text-align: center;
+    }
+    footer .footer-limiter .description {
+        display: none;
+    }
+}
+
+@media all and (max-width: 300px) {
+    header {
+        height: 120px;
+    }
+    header .header-limiter {
+        height: 120px;
+    }
+    header .header-limiter div {
+        display: none;
+    }
+    header .header-limiter nav a {
+        font-size: 10px;
+    }
+    footer {
+        min-width: 150px;
+        height: 150px;
+    }
+    footer .footer-limiter .share {
+        display: none;
+    }
+}

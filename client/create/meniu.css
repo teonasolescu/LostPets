@@ -1,0 +1,63 @@
+body {
+    font-family: 'Segoe UI';
+    margin: 0;
+}
+
+.menu {
+    background-color: #F7F7FB;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 200px;
+    padding-left: 20px;
+    padding-right: 30px;
+    transform: translateX(100%);
+    transition: all .5s ease-out;
+    color: black;
+    display: block;
+}
+
+.menu.is--open {
+    transform: translateX(0);
+}
+
+.menu ul {
+    list-style: none;
+    padding-top: 15px;
+}
+
+.menu p {
+    font-size: 35px;
+    text-align: center;
+    padding-top: 25px;
+    font-weight: bold;
+}
+
+.meniu .lista {
+    display: block;
+}
+
+.menu a {
+    color: #494c52;
+    display: inline-block;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+.spsp {
+    margin-top: 50px;
+}
+
+@media screen and (max-width: 900px) {
+    .menu {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .menu {
+        display: inline;
+        width: 100%
+    }
+}

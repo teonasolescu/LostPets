@@ -67,10 +67,29 @@ window.onload = () => {
         })
             .then(response => response.json())
             .then(response => {
-                document.getElementById("save").innerHTML = "Save";
-
                 if (!response.success) {
                     alert(response.message);
+                } else {
+                    const file = document.getElementById('image').files[0];
+
+                    if (file) {
+                        const formData = new FormData();
+                        formData.append('file', file);
+
+                        fetch(`http://127.0.0.1:6969/users/image?user=${token}`, {
+                                method: 'POST',
+                                body: formData
+                            })
+                            .then((response) => response.json())
+                            .then(response => {
+                                if (!response.success) {
+                                    alert("Something went wrong!");
+                                } else {
+                                    document.getElementById("save").innerHTML = "Save";
+                                    document.getElementById("avatar").src = response.photo;
+                                }
+                            })
+                    }
                 }
             })
             .catch(() => {
