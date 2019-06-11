@@ -1,7 +1,7 @@
 window.onload = () => {
     const token = localStorage.getItem("token");
     let currentLatLng = [47.151726, 27.587914];
-    const mymap = L.map('mapid').setView(currentLatLng, 15);
+    const mymap = L.map('mapid').setView(currentLatLng, 16);
 
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoidGVvZG9ycHJvY2EiLCJhIjoiY2p3cWRtMHl6MXphMDQ4cGppdXJyd3hvcyJ9.91T7GADbAQlx_rU4kJrFHQ', {
         maxZoom: 18,
@@ -13,7 +13,7 @@ window.onload = () => {
         color: 'red',
         fillColor: '#f03',
         fillOpacity: 0.5,
-        radius: 200
+        radius: 50
     }).addTo(mymap);
 
     circle.bindPopup("You are here!").openPopup();
@@ -85,7 +85,7 @@ window.onload = () => {
                             .then((response) => response.json())
                             .then(response => {
                                 if (!response.success) {
-                                    alert("Something went wrong!");
+                                    alert("Something got wrong!");
                                 } else {
                                     window.location.href = "/client/home/home.html";
                                 }
@@ -93,7 +93,7 @@ window.onload = () => {
                     }
                 })
                 .catch(() => {
-                    alert("Something went wrong!");
+                    alert("Something got wrong!");
                 });
         } else {
             alert("All fields are required");

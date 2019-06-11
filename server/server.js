@@ -2,7 +2,7 @@ require("dotenv").config();
 const http = require("http");
 const MongoClient = require("mongodb").MongoClient;
 
-const { 
+const {
     users,
     posts
 } = require("./routes");
@@ -12,6 +12,7 @@ http.createServer(async (req, res) => {
         const client = await MongoClient.connect(process.env.DB_URL, {
             useNewUrlParser: true
         });
+        
         const db = client.db(process.env.DB_NAME);
 
         const headers = {
@@ -31,9 +32,8 @@ http.createServer(async (req, res) => {
         if (["GET", "POST", "DELETE", "PATCH"].indexOf(req.method) > -1) {
             if (req.url.match(new RegExp(/\/users[a-z0-9/]*/))) {
                 return users(req, res, db, headers);
-            } else if (req.url.match(new RegExp(/\/pets[a-z0-9/]*/))) {
-                res.writeHead(404, headers);
-                res.end(`${req.url} is not here.`);
+            } else if (req.url.match(new RegExp(/\/posts[a-z0-9/]*/))) {
+                return posts(req, res, db, headers);
             } else {
                 res.writeHead(404, headers);
                 res.end(`${req.url} is not here.`);

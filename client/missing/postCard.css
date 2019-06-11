@@ -1,0 +1,219 @@
+.card {
+    width: 398px;
+    height: 397px;
+    box-shadow: 0 0 5px 2px #bcc2c6;
+    display: inline-block;
+    position: relative;
+    border-radius: 15px;
+}
+
+.card .header {
+    position: absolute;
+    width: 398px;
+    height: 397px;
+}
+
+.card .header .petImg {
+    width: 398px;
+    height: 241px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.card .header .profile {
+    position: absolute;
+    top: 1em;
+    left: 0.5em;
+}
+
+.card .header .avatar {
+    vertical-align: middle;
+    height: 38px;
+    width: 38px;
+    border-radius: 100%;
+}
+
+.card .header p {
+    display: inline-block;
+    margin: 0 0.5em;
+    vertical-align: middle;
+    color: white;
+    font-weight: bold;
+}
+
+.card .header .btn {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    display: none;
+}
+
+.card .header:hover .btn {
+    display: block;
+}
+
+.card .header .btn button:nth-of-type(1) {
+    border: none;
+    background: none;
+    position: relative;
+    margin: 0 0.5em;
+}
+
+.card .header .btn span {
+    color: #FF8463;
+    font-size: 12px;
+    font-weight: bold;
+    position: absolute;
+    top: 43%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card .header .btn button:nth-of-type(2) {
+    border: none;
+    background: none;
+    width: 30px;
+    height: 30px;
+    float: right;
+}
+
+.card .footer {
+    position: absolute;
+    bottom: 0;
+    width: 398px;
+    height: 156px;
+    color: #696969;
+}
+
+.card .footer .found {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #FFAD00;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    width: 120px;
+    height: 69px;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+.card .footer .found a{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card .footer .found a span{
+    margin: 24px;
+    color: white;
+}
+
+.card .footer .info {
+    position: absolute;
+    top: 0;
+    left: 1em;
+}
+
+.card .footer .info div p {
+    margin-left: 1em;
+    display: inline-block;
+    padding: 5px;
+    margin: 5px;
+}
+
+.card .footer .info div .name {
+    display: inline-block;
+}
+
+.card .footer .info div .name h2 {
+    font-size: 30px;
+    padding: 0px;
+    margin: 0px;
+}
+
+/*RESPONSIVE */
+
+@media all and (max-width: 950px) {
+    .feed .feed-limiter .card {
+        display: inline-block;
+    }
+    .feed .feed-limiter .card {
+        width: 200px;
+        height: 200px;
+    }
+    .card .header .petImg, .card .header {
+        width: 200px;
+        height: 130px;
+    }
+    .card .footer {
+        width: 200px;
+        height: 70px;
+    }
+    .card .header:hover .profile {
+        display: block;
+        font-size: 10px;
+    }
+    .card .header .profile img {
+        width: 30px;
+        height: 30px;
+    }
+    .card .footer button {
+        font-size: 13px;
+        width: 70px;
+        height: 40px;
+    }
+    .card .header:hover .btn, .card .footer .data, .card .profile {
+        display: none;
+    }
+    .card .footer {
+        font-size: 10px;
+    }
+    .card .footer .info {
+        display: inline-block;
+    }
+}
+
+@media all and (max-width: 600px) {
+    .feed .feed-limiter .card {
+        display: inline-block;
+    }
+    .feed .feed-limiter .card {
+        width: 130px;
+        height: 120px;
+    }
+    .card .header .petImg, .card .header {
+        width: 130px;
+        height: 120px;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+    .card .footer {
+        width: 130px;
+        height: 30px;
+    }
+    .card .header:hover .profile {
+        display: block;
+        font-size: 10px;
+    }
+    .card .header .profile img {
+        width: 25px;
+        height: 25px;
+    }
+    .card .footer button {
+        font-size: 10px;
+        width: 45px;
+        height: 25px;
+    }
+    .card .header:hover .btn, .card .footer .data, .card .profile, .card .footer .info {
+        display: none;
+    }
+}
+@media all and (max-width: 300px){
+    .feed .feed-limiter{
+        margin-top: 60px;
+    }
+}

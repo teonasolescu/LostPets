@@ -35,7 +35,7 @@ window.onload = () => {
                     console.log(e);
                 });
         } else {
-            alert("You need to fill the fields.");
+            alert("Yuo need to fill the fields.");
         }
     };
 };

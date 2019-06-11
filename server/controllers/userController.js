@@ -4,7 +4,10 @@ const Busboy = require('busboy');
 const crypto = require("crypto-js");
 const fs = require("fs");
 
-//proceseaza date de la client la server
+const {
+    ObjectId
+} = require("mongodb");
+
 const processBody = req =>
     new Promise(resolve => {
         let body = "";
@@ -30,10 +33,8 @@ const getUsers = async (req, res, db, headers) => {
 const getUser = async (req, res, db, headers) => {
     try {
         const token = req.url.split("user=")[1];
-        const user = await db
-            .collection("users")
-            .findOne({ 
-            tokens: token 
+        const user = await db.collection("users").findOne({
+            tokens: token
         });
 
         delete user.password;
@@ -51,7 +52,7 @@ const getUser = async (req, res, db, headers) => {
         return res.end(
             JSON.stringify({
                 success: false,
-                message: "Something bad happened!"
+                message: "Something bad happen!"
             })
         );
     }
@@ -105,7 +106,88 @@ const changeUserPhoto = async (req, res, db, headers) => {
         return res.end(
             JSON.stringify({
                 success: false,
-                message: "Something bad happened!"
+                message: "Something bad happen!"
+            })
+        );
+    }
+}
+
+const createPet = async (req, res, db, headers) => {
+    try {
+        const token = req.url.split("user=")[1];
+        const body = await processBody(req);
+
+        const user = await db.collection("users").findOne({
+            tokens: token
+        });
+
+        body.userId = user._id.toString();
+        body.timestamp = new Date().valueOf();
+
+        const pet = await db.collection("pets").insertOne(body);
+
+        res.writeHead(201, headers);
+        return res.end(
+            JSON.stringify({
+                success: true,
+                petId: pet.ops[0]._id.toString()
+            })
+        );
+    } catch (error) {
+        res.writeHead(500, headers);
+        return res.end(
+            JSON.stringify({
+                success: false,
+                message: "Something bad happen!"
+            })
+        );
+    }
+}
+
+const addPetImage = async (req, res, db, headers) => {
+    try {
+        const petId = req.url.split("pet=")[1];
+
+        const busboy = new Busboy({
+            headers: req.headers
+        });
+        let filePath;
+
+        busboy.on('file', function (fieldname, file, filename, encoding, mimetype) {
+            const type = mimetype.split('/')[1];
+
+            filePath = '/public/' + crypto.SHA512(new Date().toString()).toString() + `.${type}`;
+            const saveTo = __dirname + '/../../client' + filePath;
+
+            file.pipe(fs.createWriteStream(saveTo));
+        });
+
+        busboy.on('finish', async () => {
+            await db.collection("pets").updateOne({
+                _id: ObjectId(petId)
+            }, {
+                $set: {
+                    photo: `/client${filePath}`
+                }
+            }, {
+                upsert: true
+            });
+
+            res.writeHead(200, headers);
+            return res.end(
+                JSON.stringify({
+                    success: true
+                })
+            );
+        });
+
+        req.pipe(busboy);
+    } catch (error) {
+        res.writeHead(500, headers);
+        return res.end(
+            JSON.stringify({
+                success: false,
+                message: "Something bad happen!"
             })
         );
     }
@@ -119,8 +201,8 @@ const changeUser = async (req, res, db, headers) => {
         if (body.email) {
             const existingUser = await db
                 .collection("users")
-                .findOne({ 
-                    email: body.email 
+                .findOne({
+                    email: body.email
                 });
 
             if (existingUser && !existingUser.tokens.includes(token)) {
@@ -136,13 +218,13 @@ const changeUser = async (req, res, db, headers) => {
 
         body.currentLocation = [47.151726, 27.587914];
 
-        await db.collection("users").updateOne(
-            { tokens: token },
-            {
-                $set: body
-            },
-            { upsert: true }
-        );
+        await db.collection("users").updateOne({
+            tokens: token
+        }, {
+            $set: body
+        }, {
+            upsert: true
+        });
 
         res.writeHead(200, headers);
         return res.end(
@@ -155,7 +237,7 @@ const changeUser = async (req, res, db, headers) => {
         return res.end(
             JSON.stringify({
                 success: false,
-                message: "Something bad happened!"
+                message: "Something bad happen!"
             })
         );
     }
@@ -167,9 +249,10 @@ const loginUser = async (req, res, db, headers) => {
 
         const existingUser = await db
             .collection("users")
-            .findOne({ 
-                email: body.email, 
-                password: body.password });
+            .findOne({
+                email: body.email,
+                password: body.password
+            });
 
         if (!existingUser) {
             res.writeHead(404, headers);
@@ -181,18 +264,21 @@ const loginUser = async (req, res, db, headers) => {
             );
         } else {
             const token = uuid();
-            const { tokens } = existingUser;
+            const {
+                tokens
+            } = existingUser;
             tokens.push(token);
 
-            await db.collection("users").updateOne(
-                { email: existingUser.email },
-                {
-                    $set: {
-                        tokens
-                    }
-                },
-                { upsert: true }
-            );
+            await db.collection("users").updateOne({
+                email: existingUser.email
+            }, {
+                $set: {
+                    tokens,
+                    currentLocation: [47.151726, 27.587914]
+                }
+            }, {
+                upsert: true
+            });
 
             delete existingUser.password;
             delete existingUser.tokens;
@@ -211,11 +297,41 @@ const loginUser = async (req, res, db, headers) => {
         return res.end(
             JSON.stringify({
                 success: false,
-                message: "Something bad happened!"
+                message: "Something bad happen!"
             })
         );
     }
 };
+
+const getPets = async (req, res, db, headers) => {
+    try {
+        const token = req.url.split("user=")[1];
+
+        const user = await db.collection("users").findOne({
+            tokens: token
+        });
+
+        const pets = await db.collection("pets").find({
+            userId: user._id.toString()
+        }).toArray();
+
+        res.writeHead(200, headers);
+        return res.end(
+            JSON.stringify({
+                success: true,
+                pets
+            })
+        );
+    } catch (error) {
+        res.writeHead(500, headers);
+        return res.end(
+            JSON.stringify({
+                success: false,
+                message: "Something bad happen!"
+            })
+        );
+    }
+}
 
 const createUser = async (req, res, db, headers) => {
     try {
@@ -223,7 +339,9 @@ const createUser = async (req, res, db, headers) => {
 
         const existingUser = await db
             .collection("users")
-            .findOne({ email: body.email });
+            .findOne({
+                email: body.email
+            });
 
         if (existingUser) {
             res.writeHead(409, headers);
@@ -259,7 +377,7 @@ const createUser = async (req, res, db, headers) => {
         return res.end(
             JSON.stringify({
                 success: false,
-                message: "Something bad happened!"
+                message: "Something bad happen!"
             })
         );
     }
@@ -271,5 +389,8 @@ module.exports = {
     loginUser,
     getUser,
     changeUser,
-    changeUserPhoto
+    changeUserPhoto,
+    createPet,
+    addPetImage,
+    getPets
 };

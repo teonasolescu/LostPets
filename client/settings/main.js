@@ -5,7 +5,9 @@ window.onload = () => {
         .then(response => response.json())
         .then(response => {
             if (response.success) {
-                const { user } = response;
+                const {
+                    user
+                } = response;
 
                 document.getElementById("fname").value = user.firstname;
                 document.getElementById("lname").value = user.lastname;
@@ -57,14 +59,14 @@ window.onload = () => {
         document.getElementById("save").innerHTML = "Saving..";
 
         fetch(`http://127.0.0.1:6969/users/change?user=${token}`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "Access-Control-Allow-Origin": "*",
-                "Access-Control-Allow-Methods": "*"
-            },
-            body: JSON.stringify(body)
-        })
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Access-Control-Allow-Origin": "*",
+                    "Access-Control-Allow-Methods": "*"
+                },
+                body: JSON.stringify(body)
+            })
             .then(response => response.json())
             .then(response => {
                 if (!response.success) {
@@ -83,7 +85,7 @@ window.onload = () => {
                             .then((response) => response.json())
                             .then(response => {
                                 if (!response.success) {
-                                    alert("Something went wrong!");
+                                    alert("Something got wrong!");
                                 } else {
                                     document.getElementById("save").innerHTML = "Save";
                                     document.getElementById("avatar").src = response.photo;

@@ -1,0 +1,96 @@
+form {
+    height: 100px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+form .selectors-limiter {
+    max-width: 1400px;
+    margin: 25px auto;
+    border-bottom: 1px solid #CFCFCF;
+}
+
+form .selectors {
+    max-width: 900px;
+    margin: auto auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+form .selectors select, form .selectors div input {
+    border: 1px solid #c4c4c4;
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 10px 5px;
+    width: 260px;
+    font-weight: 900;
+    font-size: 14px;
+    color: #CFCFCF;
+}
+
+form .selectors select {
+    -webkit-appearance: none;
+    background-image: url("arrow.png");
+    background-repeat: no-repeat;
+    background-position: 95% center;
+}
+
+form .selectors select option {
+    font-weight: 900;
+    font-size: 14px;
+    color: #CFCFCF;
+}
+
+[type="date"] {
+    background: white url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png) 97% 50% no-repeat;
+}
+
+[type="date"]::-webkit-inner-spin-button {
+    display: none;
+}
+
+[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+}
+
+label {
+    display: block;
+}
+
+.feed {
+    max-width: 1400px;
+    margin: 50px auto;
+}
+
+.feed .feed-limiter {
+    margin-left: 70px;
+}
+
+.feed .feed-limiter .card {
+    margin-right: 30px;
+    margin-bottom: 30px;
+    display: inline-block;
+}
+
+/* RESPONSIVE */
+
+@media all and (max-width: 950px) {
+    form .selectors select, form .selectors div input {
+        width: 180px;
+    }
+}
+
+@media all and (max-width: 600px) {
+    form .selectors select {
+        width: 130px;
+    }
+}
+
+@media all and (max-width: 400px) {
+    form .selectors, form .selectors div input {
+        display: block;
+    }
+}
