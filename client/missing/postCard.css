@@ -9,12 +9,12 @@
 
 .card .header {
     position: absolute;
-    width: 398px;
-    height: 397px;
+    max-width: 398px;
 }
 
 .card .header .petImg {
-    width: 398px;
+    max-width: 398px;
+    width: 100%;
     height: 241px;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
@@ -80,7 +80,8 @@
 .card .footer {
     position: absolute;
     bottom: 0;
-    width: 398px;
+    max-width: 398px;
+    width: 100%;
     height: 156px;
     color: #696969;
 }
@@ -135,8 +136,20 @@
     margin: 0px;
 }
 
-/*RESPONSIVE */
+#myPosts p {
+    text-align: center;
+}
 
+.feed-limiter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 !important;
+}
+
+/*RESPONSIVE */
+/* 
 @media all and (max-width: 950px) {
     .feed .feed-limiter .card {
         display: inline-block;
@@ -216,4 +229,4 @@
     .feed .feed-limiter{
         margin-top: 60px;
     }
-}
+} */

@@ -31,9 +31,7 @@ fetch(`http://127.0.0.1:6969/users/notifications?user=${token}`)
             const {
                 notifications
             } = response;
-
-            console.log(notifications);
-
+            
             document.getElementById("notificationDrop").innerHTML = "";
 
             let unred = false;
@@ -44,15 +42,19 @@ fetch(`http://127.0.0.1:6969/users/notifications?user=${token}`)
                         unred = true;
                     }
 
-                    document.getElementById("notificationDrop").innerHTML += `
+                    if (notif.user) {
+                        document.getElementById("notificationDrop").innerHTML += `
                         <div class="notifContainer">
                             <img src="${notif.user.profilePhoto}" alt="">
                             <p>${notif.message}</p>
                         </div>
                     `;
+                    }
+
+                    
                 });
 
-                if (unread) {
+                if (unred) {
                     document.getElementById("notifDot").classList.add("active");
                 }
             } else {

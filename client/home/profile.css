@@ -9,8 +9,8 @@
 }
 
 .profile-card {
-    width: 250px;
-    height: 430px;
+    width: 100%;
+    max-width: 250px;
     border-radius: 12px;
     box-shadow: 0 3px 5px #ECECEF;
     padding: 20px;
@@ -37,7 +37,7 @@
 .profile-card .profile-field {
     display: inline-flex;
     align-items: flex-start;
-    width: 250px;
+    width: 100%;
 }
 
 .profile-card .profile-field img {
@@ -77,13 +77,14 @@
 }
 
 .pet-card {
-    width: 300px;
-    height: 550px;
+    width: 100%;
+    max-width: 350px;
     border-radius: 12px;
     box-shadow: 0 3px 5px #ECECEF;
     overflow: hidden;
     display: block;
     margin: 0 10px 0 0;
+    padding: 10px;
 }
 
 .pet-card img {
@@ -132,10 +133,6 @@ h3 {
     margin: 0 auto;
 }
 
-.found-pets .pet-card {
-    height: 320px;
-}
-
 .found-pets .pet-card .profile-field {
     display: flex;
     padding: 0 10px;
@@ -150,7 +147,8 @@ h3 {
 }
 .placeholder .limiter{
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    align-items: flex-start;
+    justify-content: center;
     margin: 0 auto;
+    flex-wrap: wrap;
 }

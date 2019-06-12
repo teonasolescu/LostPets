@@ -60,11 +60,11 @@ header .header-limiter #profile {
     margin-left: 20px;
 }
 
-header .header-limiter #add {
+header .header-limiter .add {
     vertical-align: middle;
 }
 
-header .header-limiter #add img {
+header .header-limiter .add img {
     height: 30px;
     width: 30px;
 }
@@ -160,7 +160,7 @@ footer .footer-limiter .description p {
         width: 50px;
         height: 50px;
     }
-    header .header-limiter div #add img {
+    header .header-limiter div .add img {
         width: 30px;
         height: 30px;
     }
@@ -205,7 +205,7 @@ footer .footer-limiter .description p {
         width: 50px;
         height: 50px;
     }
-    header .header-limiter div #add img {
+    header .header-limiter div .add img {
         width: 30px;
         height: 30px;
     }
