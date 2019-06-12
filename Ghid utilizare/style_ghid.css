@@ -1,0 +1,56 @@
+body {
+    margin: 0 15%;
+    font-family: 'Segoe UI';
+    font-size: 18px;
+}
+header {
+    text-align: center;
+    margin: 0 15%;
+    border-bottom: 2px solid darkblue;
+}
+main {
+    display: block;
+}
+#contents {
+    margin: 50px 15%;
+}
+#contents dl {
+    margin: 0 20px;
+}
+main section {
+    margin: 0 15%;
+}
+main section p span {
+    color: #404247;
+    font-size: 30px;
+    font-weight: 900;
+}
+section p {
+    margin: 5px 0;
+    text-indent: 30px;
+}
+ol {
+    counter-reset: item;
+}
+li {
+    display: block;
+} 
+li:before {
+    content: counters(item, ".") ". ";
+    counter-increment: item;
+}
+img.hug {
+    height:50%;
+    width:50%;
+    position: relative;
+    left: 18%;
+}
+
+img{
+    margin-bottom: 70px;
+}
+
+.account{
+    height:500px;
+    width: 1300px;
+}
