@@ -1,0 +1,63 @@
+body {
+    margin: 0 15%;
+    font-family: 'Segoe UI';
+    font-size: 18px;
+}
+
+header{
+    text-align: center;
+    margin: 0 15%;
+    border-bottom: 2px solid darkblue;
+}
+main{
+    display: block;
+}
+#contents{
+    margin: 50px 15%;
+}
+#contents dl{
+    margin: 0 20px;
+}
+main section{
+    margin: 0 15%;
+}
+main section p span{
+    color: #404247;
+    font-size: 30px;
+    font-weight: 900;
+}
+section p{
+    margin: 5px 0;
+    text-indent: 30px;
+}
+#bd div{
+    text-align: center;
+}
+#statistics p span{
+    font-weight: bold;
+    color: red;
+    font-size: 22px;
+}
+#func ul{
+    list-style-type: square;
+}
+#c4 #component{
+    text-align: center;
+    margin: 0 0 50px 50px;
+}
+
+#c4 #component img{
+    width: 1200px;
+}
+
+section img{
+    text-align: center;
+}
+
+#code{
+    margin: 50px 0;
+    text-align: left;
+}
+#source-code{
+    margin: 0;
+}

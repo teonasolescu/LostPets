@@ -1,0 +1,47 @@
+body {
+    margin: 0 15%;
+    font-family: 'Segoe UI';
+    font-size: 18px;
+}
+
+header{
+    text-align: center;
+    margin: 0 15%;
+    border-bottom: 2px solid darkblue;
+}
+main{
+    display: block;
+}
+#contents{
+    margin: 50px 15%;
+}
+#contents dl{
+    margin: 0 20px;
+}
+main section{
+    text-align: center;
+    margin-bottom: 100px;
+}
+main section h2{
+    margin: 15px 15%;
+    text-align: left;
+}
+main section p span{
+    color: #404247;
+    font-size: 30px;
+    font-weight: 900;
+}
+section p{
+    margin: 5px 0;
+    text-indent: 30px;
+}
+
+#c4 #component{
+    text-align: center;
+    margin: 0 0 50px 50px;
+}
+
+img{
+    width: 1200px;
+    margin-bottom: 25px;
+}

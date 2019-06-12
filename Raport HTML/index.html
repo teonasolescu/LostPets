@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Raport LostPets</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Raport LostPets</h1>
+    </header>
+
+    <main>
+        <div id="contents">
+            <ol>
+                <li><a href="#description">Descrierea proiectului</a></li>
+                <li><a href="#use-case">Diagrame</a></li>
+                <li><a href="#db">Baza de date</a></li>
+                <li><a href="#mvc">Design pattern</a></li>
+                <li><a href="#func">Flow-ul aplicatiei</a></li>
+                <li><a href="#auth">Autentificare</a></li>
+                <li><a href="#map">Open Street Map</a></li>
+                <li><a href="#statistics">Statistici</a></li>
+                <li><a href="#tech">Tehnologii utilizate</a></li>
+                <li><a href="#git">Managementul codului sursa</a></li>
+            </ol>
+        </div>
+
+        <section id="description">
+            <h2><span>1. </span>Descrierea proiectului</h2>
+
+            <p>
+                <span itemscope itemtype="http://schema.org/Project"
+                    style="text-decoration: none; font-weight: bold; margin-left:30px;">LostPets</span>
+
+                este o aplicatie Web care vine in ajutorul recuperarii animalelor pierdute de o
+                persoana.
+                Utilizatorul va trebui sa se logheze pentru a beneficia de serviciile oferite de aplicatie.
+                Acesta din urma va putea sa isi completeze profilul cu datele personale, precum si animalele pe care
+                le detine si poate posta un anunt care va contine informatii relevante despre animalul sau
+                pierdut,
+                precum si imagini, locatia unde a fost pierdut si modalitatea de contact (e-mail, nr. de telefon).
+            </p>
+            <p>
+                Odata
+                facuta o postare, utilizatorii din zona respectiva vor fi notificati automat, urmand ca acestia sa poata
+                updata locul unde a fost vazut ultima oara, fiind apoi notificati alti oameni.
+                De asemenea, utilizatorii vor avea acces la statistici realizate pe baza aplicatiei privind cazurile
+                animalelor pierdute, recompense, zonele cele mai vulnerabile.
+            </p>
+        </section>
+
+        <section id="use-case">
+            <h2><span>2. </span>Diagrame</h2>
+            <li typeof="schema:WebPage" role="doc-biblioentry" resource="./diagrams.html" property="schema:citation"
+                id="some-id">
+                <cite property="schema:name">
+                    <a href="./diagrams.html">Use-case and C4 diagrams</a>
+                </cite>,
+                by <span property="schema:author" typeof="schema:Person">
+                    <span property="schema:givenName">Andra Elena</span>
+                    <span property="schema:familyName">Gistescu</span>
+                </span>; published in
+                <time property="schema:datePublished" datatype="xsd:gYear" datetime="2019">2019</time>
+                <span property="schema:potentialAction" typeof="schema:ReadAction">
+                    <meta property="schema:actionStatus" content="CompletedActionStatus">
+                    (accessed on
+                    <time property="schema:endTime" datatype="xsd:date" datetime="2019-06-12">12 Jun 2019</time>)
+                </span>.
+            </li>
+
+        </section>
+
+        <section id="db">
+            <h2><span>3. </span>Baza de date</h2>
+            <div><img src="img/bd.png" alt="bd" /></div>
+            <ul>
+                <li><b>users: </b> Stocheaza clientii in baza de date.</li>
+                <li><b>posts: </b> Stocheaza toate anunturile utilizatorilor.</li>
+                <li><b>pets: </b> Stocheaza animalele inregistrate. Un animal poate apartine unui singur user.</li>
+                <li><b>notifications: </b> Persista datele privind updatarea locatiei unui animal.</li>
+                <li><b>reviews: </b> Persista informatiile cu privire la datele utilizatorilor care anunta ca au vazut
+                    animalul pierdut.</li>
+            </ul>
+        </section>
+
+        <section id="mvc">
+            <h2><span>4. </span>Model-View-Controller</h2>
+            <p>
+                <b>MVC</b> este un design pattern arhitectural care structureaza aplicatia in
+                3 componente logice principale: <ins>model</ins>, <ins>view</ins>, <ins>controller</ins>.
+                Fiecare din aceste componente sunt construite pentru a servi unui aspect specific al aplicatiei:
+                UI, business si intrarile utilizatorului.
+            </p>
+            <p>
+                <b>Model</b> reprezinta datele din baza de date care vor fi transferate intre View si Controller si
+                corespunde informatiilor logice ale utilizatorilor. Acesta va contine informatiile unui utilizator la
+                crearea
+                contului si persistarea acestora in baza de date si va servi drept suport generarii de statistici,
+                filtrarii de anunturi dupa data disparitiei, recompensa cu un badge corespunzator implicarii in
+                comunitate,
+                updatarea istoricului locatiilor in care animalul a fost vazut.
+            </p>
+            <p>
+                <b>View</b> este utilizat pentru partea de UI a aplicatiei, interfata propriu-zisa cu care utilizatorul
+                interactioneaza si consta in textareas, dropdowns, checkbox-uri etc.
+            </p>
+            <p>
+                <b>Controller</b> este "creierul" aplicatiei, are rolul de intermediar intre Model si View. Acesta preia
+                datele definite de Model si le manipuleaza, outputul fiind redirectat View-ului pentru a fi disponibil
+                utilizatorului: formularul de login, respectiv de signin, editarea profilului cu informatii despre sine
+                si adaugarea animalelor pe care le detine, postarea unui anunt.
+            </p>
+            <p>
+                Avantajele acestui design pattern este faptul ca asigura modularitatea si scalabilitatea aplicatiei,
+                reduce complexitatea aplicatiei si ofera suport pentru lucrul in echipa.
+
+            </p>
+            <div><img src="img/mvc.png" alt="mvc" /></div>
+        </section>
+
+        <section id="func">
+            <h2><span>5. </span>Flow-ul aplicatiei</h2>
+            <ul>
+                <li><b>Landing page-ul</b> reprezinta pagina principala. Aceasta contine informatii
+                    despre scopul paginii. Vizitatorul paginii poate deveni utilizator completand formularul
+                    de sign up sau in cazul in care are deja cont, se poate loga in aplicatie cu emailul si parola
+                    corespunzatoare.
+                </li>
+                <li><b>Pagina de creare postare</b> contine un formular cu informatii despre animalul pierdut: nume,
+                    sex, talie, data disparitiei, rasa, culoare, locatia unde a fost ultima data vazut etc.</li>
+                <li><b>Pagina de feed</b> contine anunturile animalelor pierdute. Permite utilizatorului
+                    filtrarea anunturilor dupa locatie, data disparitiei si rasa. Daca utilizatorul are facut un
+                    anunt, acesta va aparea la inceputul paginii avand posibilitatea de a urmari istoricul locatiilor in
+                    care a mai fost vazut animalul.</li>
+                <li><b>Pagina de profil</b> contine informatiile utilizatorului, datele de contact, precum si o lista cu
+                    animalele pe care le detine si animalele pe care le-a salvat.
+                </li>
+                <li><b>Pagina de statistici</b> contine mai multe chart-uri privind zonele cele mai vulnerabile din
+                    punctul de vedere al
+                    numarului de animale pierdute, range-ul de recompense oferite de catre utilizatori, zonele in care
+                    sunt cei mai activi utilizatori (s-au gasit cele mai multe animale).
+                    Aceasta pagina va contine si un dropdown care va permite utilizatorului sa downloadeze statisticile
+                    in format CSV sau PDF.</li>
+                <li><b>Pagina de contact</b> contine un formular de contact: nume, email, mesaj.
+                </li>
+                <li><b>Pagina de setari</b> contine un formular prin care utilizatorul poate modifica datele personale.
+                </li>
+            </ul>
+        </section>
+
+        <section id="auth">
+            <h2><span>6. </span>Autentificare</h2>
+            <p>
+                Pentru a persista utilizatorii logati am ales sa folosim <b>token</b> care va fi generat folosint
+                libraria <b>uuid</b>,
+                asigurandu-se siguranta transmiterii informatiilor. In momentul in care userul este conectat, fiecare
+                solicitare pe care o va
+                executa va contine token pentru a-i permite sa acceseze servicii si resurse.
+            </p>
+            <p>
+                In momentul in care userul se logheaza, automat i se va returna un token, iar din motive de securitate
+                vom
+                pastra tokenurile doar 2 ore, pentru a preveni "furtul" acestuia.
+            </p>
+        </section>
+
+        <section id="map">
+            <h2><span>7. </span>Open Street Map</h2>
+
+            <div itemscope itemtype="http://schema.org/Map">
+                <!-- Place the Map code in the Places (LocalBusiness) section, not PostalAddress -->
+                <a itemprop="hasMap" href="https://maps.google.com/maps?cid=YOURCIDNUMBER" target="_blank"
+                    style="text-decoration: none; font-weight: bold; margin-left:30px;">Check Leaflet library</a>
+            </div>
+
+            <p>
+                Vom folosi <b>Leaflet</b> - o librarie JavaScript open-source
+                care permite integrarea intr-o aplicatie a unei harte interactive.
+
+                <section id="source-code" typeof="schema:SoftwareSourceCode">
+                    <pre id="code">
+let currentLatLng = [47.151726, 27.587914];
+const mymap = L.map('mapid').setView(currentLatLng, 15);
+                    
+L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1I...J9.91T7GADbAQlx_rU4kJrFHQ', {
+maxZoom: 18,
+id: 'mapbox.streets',
+accessToken: 'pk.eyJ1IjoidGVvZG9ycHJvY2EiLCJhIjoiY2p3cWRtMHl6MXphMDQ4cGppdXJyd3hvcyJ9.91T7GADbAQlx_rU4kJrFHQ'
+}).addTo(mymap);
+                    
+const circle = L.circle(currentLatLng, {
+color: 'red',
+fillColor: '#f03',
+fillOpacity: 0.5,
+radius: 200
+}).addTo(mymap);
+                    
+circle.bindPopup("You are here!").openPopup();
+                    
+function onMapClick(e) {
+currentLatLng = [e.latlng.lat, e.latlng.lng];
+circle.setLatLng(e.latlng);
+circle.bindPopup("Lost here!").openPopup();
+}
+                    
+mymap.on('click', onMapClick);
+                    </pre>
+                </section>
+
+                Mai sus este un exemplu de deschidere a unei harti careia i se aplica un marcator care poate fi mutat pe
+                harta printr-un simplu click.
+                Fiecare anunt al unui animal va contine o harta cu locatia unde a fost pierdut.
+            </p>
+        </section>
+
+        <section id="statistics">
+            <h2><span>8. </span>Statistici</h2>
+            <p>
+                Proiectul va contine o pagina cu statistici facute pe baza aplicatiei, utilizatorul
+                avand posibilitatea si de a le downloada in formatul <b>PDF</b> si <b>CSV</b> folosind librariile
+                <b>csv-write</b>, respectiv <b>pdfkit</b>.
+                Statisticile se vor genera utilizand biblioteca <span>Chart.js</span> pe baza datelor preluate din
+                baza de date a aplicatiei.
+            </p>
+            <P>
+                Statisticile vor oferi informatii privind zonele cele mai vulnerabile in care s-au pierdut
+                cele mai multe animale (bazata pe locatia unei postari), precum si zonele in care sunt cei mai activi
+                utilizatori,
+                sunt salvate cele mai multe animale, range-ul recompenselor oferite de catre utilizatori pentru
+                recuperarea
+                animalului pierdut (bazata pe suma din cadrul fiecarui anunt de disparitie).
+            </P>
+        </section>
+        <section id="tech">
+            <h2><span>9. </span>Tehnologii utilizate</h2>
+            <ul>
+                <li>NodeJS</li>
+                <li>MongoDB</li>
+                <li>MongoDB Compass</li>
+                <li>vom exporta statisticile în CSV(csv-writer) și PDF(pdfkit)</li>
+                <li>HTML, JavaScript și CSS pentru partea de front-end</li>
+            </ul>
+        </section>
+
+        <section id="git">
+            <h2><span>10. </span>Managementul codului sursa</h2>
+
+            <p>
+                Managementul codului sursa si stocarea s-a realizat utilizand
+                <a href="https://github.com"><b>GitHub</b></a>. La inceputul proiectului a fost realizat un repository
+                LostPets
+                in care au fost adaugati contribuitorii echipei de dezvoltare a aplicatiei. Pe parcursul procesului de
+                dezvoltare al proiectului, au fost facute commituri cu contributia fiecarui membru al echipei. Pentru
+                aceasta
+                au fost folosite GitHub Desktop si GitHub Bash.
+            </p>
+        </section>
+
+        <section typeof="sa:Affiliations">
+            <h2>11. Affiliations</h2>
+            <ul>
+                <li id="sa">
+                    <span typeof="schema:Organization" resource="https://www.info.uaic.ro">
+                        <span property="schema:name">infoiasi</span>,
+                        <span property="schema:parentOrganization">
+                            <span typeof="schema:Organization">
+                                <span property="schema:name">Facultatea de informatica</span>
+                                —
+                                <span property="schema:location" typeof="schema:Place">
+                                    <span property="schema:address" typeof="schema:PostalAddress">
+                                        <span property="schema:addressRegion">Iasi</span>,
+                                        <span property="schema:addressCountry">Romania</span>
+                                    </span>
+                                </span>
+                            </span>
+                        </span>
+                    </span>
+                </li>
+            </ul>
+        </section>
+
+        <section typeof="sa:AuthorsList">
+            <h2>12. Authors</h2>
+            <ul>
+                <li typeof="sa:ContributorRole" property="schema:author">
+                    <span typeof="schema:Person" resource="https://github.com/andragistescu">
+                        <meta property="schema:givenName" content="Andra">
+                        <meta property="schema:additionalName" content="Elena">
+                        <meta property="schema:familyName" content="Gistescu">
+                        <span property="schema:name">Andra-Elena Gistescu</span>
+                    </span>
+                    <ul>
+                        <li property="schema:roleContactPoint" typeof="schema:ContactPoint">
+                            <a href="mailto:andra.gistescu@info.uaic.ro"
+                                property="schema:email">andra.gistescu@info.uaic.ro</a>
+                        </li>
+                        <li property="schema:roleContactPoint" typeof="schema:ContactPoint">
+                            <a href="telephone:+40736752504" property="schema:telephone">+40736752504</a>
+                        </li>
+                    </ul>
+                </li>
+                <li typeof="sa:ContributorRole" property="schema:author">
+                    <span typeof="schema:Person" resource="https://github.com/lidiagabriela">
+                        <meta property="schema:givenName" content="Lidia">
+                        <meta property="schema:additionalName" content="Gabriela">
+                        <meta property="schema:familyName" content="Burca">
+                        <span property="schema:name">Lidia Gabriela Burca</span>
+                    </span>
+                    <ul>
+                        <li property="schema:roleContactPoint" typeof="schema:ContactPoint">
+                            <a href="mailto:lidia.burca@info.uaic.ro" property="schema:email">lidia.burca@info.uaic.ro</a>
+                        </li>
+                        <li property="schema:roleContactPoint" typeof="schema:ContactPoint">
+                            <a href="telephone:+40744500517" property="schema:telephone">+40744500517</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+
+</body>
+
+</html>
