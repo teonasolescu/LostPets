@@ -239,7 +239,8 @@ const foundPet = async (req, res, db, headers) => {
                         message: "Someone found a pet near you.",
                         postId: post._id.toString(),
                         hostId: user._id.toString(),
-                        timestamp: new Date().valueOf()
+                        timestamp: new Date().valueOf(),
+                        seen: false
                     });
                 }
             }
@@ -313,7 +314,8 @@ const createReview = async (req, res, db, headers) => {
                         message: "Someone saw a pet near you.",
                         postId: post._id.toString(),
                         hostId: user._id.toString(),
-                        timestamp: new Date().valueOf()
+                        timestamp: new Date().valueOf(),
+                        seen: false
                     });
                 }
             }
@@ -474,7 +476,8 @@ const createPost = async (req, res, db, headers) => {
                         message: "Someone lost a pet near you.",
                         postId: post.ops[0]._id.toString(),
                         hostId: user._id.toString(),
-                        timestamp: new Date().valueOf()
+                        timestamp: new Date().valueOf(),
+                        seen: false
                     });
                 }
             }

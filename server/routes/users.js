@@ -7,7 +7,11 @@ const {
     changeUserPhoto,
     createPet,
     addPetImage,
-    getPets
+    getPets,
+    getStatistics,
+    getRaport,
+    getNotifications,
+    readNotifications
 } = require("../controllers/userController");
 
 const users = (req, res, db, headers) => {
@@ -21,8 +25,16 @@ const users = (req, res, db, headers) => {
         return getUser(req, res, db, headers);
     } else if (req.method === "GET" && req.url.includes("/users/pets?user=")) {
         return getPets(req, res, db, headers);
+    } else if (req.method === "GET" && req.url.includes("/users/notifications?user=")) {
+        return getNotifications(req, res, db, headers);
+    } else if (req.method === "GET" && req.url.includes("/users/notifications-read?user=")) {
+        return readNotifications(req, res, db, headers);
+    } else if (req.method === "GET" && req.url === "/users/statistics") {
+        return getStatistics(req, res, db, headers);
     } else if (req.method === "POST" && req.url.includes("/users/change?user=")) {
         return changeUser(req, res, db, headers);
+    } else if (req.method === "GET" && req.url.includes("/users/raport?type=")) {
+        return getRaport(req, res, db, headers);
     } else if (req.method === "POST" && req.url.includes("/users/pet?user=")) {
         return createPet(req, res, db, headers);
     } else if (req.method === "POST" && req.url.includes("/users/pet?pet=")) {

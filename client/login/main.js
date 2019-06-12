@@ -26,6 +26,7 @@ window.onload = () => {
                 .then(response => {
                     if (response.success) {
                         localStorage.setItem("token", response.token);
+                        localStorage.setItem("expire", new Date().valueOf() + 1000 * 60 * 60 * 2);
                         window.location.href = "/client/home/home.html";
                     } else {
                         alert(response.message);

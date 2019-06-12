@@ -26,40 +26,27 @@
                 </nav>
 
                 <div>
-                    <a href="/client/create/create.html"><button id="add" type="button"> <img src="icons/add.svg"
-                                alt="add post" /></button></a>
+                    <a href="/client/create/create.html"><button id="add" type="button"> <img
+                                src="https://img.icons8.com/doodle/48/000000/plus.png" alt="add post" /></button></a>
                     <button id="profile" type="button"> <img src="icons/profile.jpg" alt="avatar"
                             id="avatar" /></button>
-
-                    <div>
-                        <aside class="menu">
-                            <div class="lista">
-                                <p>Menu</p>
-
-                                <ul>
-                                    <li><a href=""><b>Notificari</b></a></li>
-                                    <li><a href="/client/settings/settings.html"><b>Setari</b></a></li>
-                                    <li><a href=""><b>Deconectare</b></a></li>
-                                    <li class="spsp"><a href="#"><b>Exit</b></a></li>
-                                </ul>
-                            </div>
-                        </aside>
-                    </div>
-
-                    <script>
-                        let profile = document.getElementById('profile');
-                        let menu = document.querySelector('.menu');
-
-                        profile.addEventListener('click', () => {
-                            menu.classList.add('is--open');
-                        });
-
-                        document.addEventListener('keyup', (e) => {
-                            if (e.key === 'Escape' || e.keyCode === 27) {
-                                menu.classList.remove('is--open');
-                            }
-                        })
-                    </script>
+                    <a href="/client/settings/settings.html"><button id="add" type="button"> <img
+                                src="https://img.icons8.com/ios/50/000000/settings.png" alt="add post" /></button></a>
+                    <a class="notificationContainer" id="notifBtn">
+                        <button id="add" type="button">
+                            <img src="https://img.icons8.com/wired/64/000000/appointment-reminders.png"
+                                alt="add post" />
+                        </button>
+                        <div class="notificationDrop" id="notificationDrop">
+                        </div>
+                        <div id="notifDot"></div>
+                    </a>
+                    <a href="/client/statistics/statistics.html"><button id="add" type="button"> <img
+                                src="https://img.icons8.com/pastel-glyph/64/000000/attestation.png"
+                                alt="add post" /></button></a>
+                    <a id="logout"><button id="add" type="button"> <img
+                                src="https://img.icons8.com/pastel-glyph/64/000000/logout-rounded-down.png"
+                                alt="add post" /></button></a>
                 </div>
             </div>
         </header>
@@ -223,6 +210,8 @@
             integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
             crossorigin=""></script>
         <script src="./main.js"></script>
+        <script src="../utils/logout.js"></script>
+        <script src="../utils/notif.js"></script>
     </body>
 
 </html>

@@ -4,6 +4,9 @@ const Busboy = require('busboy');
 const crypto = require("crypto-js");
 const fs = require("fs");
 
+const createCsvWriter = require('csv-writer').createObjectCsvWriter;
+const PDFDocument = require('pdfkit');
+
 const {
     ObjectId
 } = require("mongodb");
@@ -24,6 +27,79 @@ const processBody = req =>
             resolve(JSON.parse(body));
         });
     });
+
+const getNotifications = async (req, res, db, headers) => {
+    try {
+        const token = req.url.split("user=")[1];
+        const user = await db.collection("users").findOne({
+            tokens: token
+        });
+
+        const notifs = await db.collection("notifications").find({
+            userId: user._id.toString()
+        }).toArray();
+
+        for (let index = 0; index < notifs.length; index++) {
+            const notif = notifs[index];
+
+            const user = await db.collection("users").findOne({
+                _id: ObjectId(notif.hostId)
+            });
+
+            notif.user = user;
+        }
+
+        res.writeHead(200, headers);
+        return res.end(
+            JSON.stringify({
+                success: true,
+                notifications: notifs
+            })
+        );
+    } catch (error) {
+        res.writeHead(500, headers);
+        return res.end(
+            JSON.stringify({
+                success: false,
+                message: "Something bad happen!"
+            })
+        );
+    }
+};
+
+const readNotifications = async (req, res, db, headers) => {
+    try {
+        const token = req.url.split("user=")[1];
+        const user = await db.collection("users").findOne({
+            tokens: token
+        });
+
+        await db.collection("notifications").updateOne({
+            userId: user._id.toString()
+        }, {
+            $set: {
+                seen: true
+            }
+        }, {
+            upsert: true
+        });
+
+        res.writeHead(200, headers);
+        return res.end(
+            JSON.stringify({
+                success: true
+            })
+        );
+    } catch (error) {
+        res.writeHead(500, headers);
+        return res.end(
+            JSON.stringify({
+                success: false,
+                message: "Something bad happen!"
+            })
+        );
+    }
+};
 
 const getUsers = async (req, res, db, headers) => {
     res.writeHead(200, headers);
@@ -383,6 +459,94 @@ const createUser = async (req, res, db, headers) => {
     }
 };
 
+const getStatistics = async (req, res, db, headers) => {
+    try {
+        const total = await db.collection("posts").find({}).toArray();
+        const found = await db.collection("posts").find({
+            found: true
+        }).toArray();
+
+        res.writeHead(200, headers);
+        return res.end(
+            JSON.stringify({
+                success: true,
+                total: total.length,
+                found: found.length
+            })
+        );
+    } catch (error) {
+        res.writeHead(500, headers);
+        return res.end(
+            JSON.stringify({
+                success: false,
+                message: "Something bad happen!"
+            })
+        );
+    }
+}
+
+const getRaport = async (req, res, db, headers) => {
+    try {
+        const type = req.url.split("type=")[1];
+        const filePath = `/public/raport.${type}`;
+
+        const total = await db.collection("posts").find({}).toArray();
+        const found = await db.collection("posts").find({
+            found: true
+        }).toArray();
+
+        if (type === "csv") {
+            const csvWriter = createCsvWriter({
+                path: __dirname + '/../../client' + filePath,
+                header: [{
+                        id: 'total',
+                        title: 'Total'
+                    },
+                    {
+                        id: 'found',
+                        title: 'Found'
+                    }
+                ]
+            });
+
+            const records = [{
+                total: total.length,
+                found: found.length
+            }];
+
+            await csvWriter.writeRecords(records);
+        } else if (type === "pdf") {
+            const doc = new PDFDocument();
+            doc.pipe(fs.createWriteStream(__dirname + '/../../client' + filePath));
+
+            doc.text(`Total lost pets: ${total.length}. Found pets: ${found.length}`, 100, 100);
+
+            doc.end();
+        } else if (type === "html") {
+            const raport = fs.createWriteStream(__dirname + '/../../client' + filePath);
+
+            raport.write(`Total lost pets: ${total.length}. Found pets: ${found.length}`);
+            raport.end();
+        }
+
+        res.writeHead(200, headers);
+        return res.end(
+            JSON.stringify({
+                success: true,
+                link: `/client${filePath}`
+            })
+        );
+    } catch (error) {
+        res.writeHead(500, headers);
+        return res.end(
+            JSON.stringify({
+                success: false,
+                message: "Something bad happen!"
+            })
+        );
+    }
+}
+
 module.exports = {
     getUsers,
     createUser,
@@ -392,5 +556,9 @@ module.exports = {
     changeUserPhoto,
     createPet,
     addPetImage,
-    getPets
+    getPets,
+    getStatistics,
+    getRaport,
+    getNotifications,
+    readNotifications
 };

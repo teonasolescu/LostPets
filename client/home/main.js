@@ -92,9 +92,7 @@ window.onload = () => {
                 const {
                     posts
                 } = response;
-
-                console.log(posts);
-
+                
                 document.getElementById("foundPets").innerHTML = "";
 
                 if (posts.length > 0) {
